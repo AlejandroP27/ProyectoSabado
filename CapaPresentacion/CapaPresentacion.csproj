@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F7389E45-27DF-4374-BB6B-09874B3727CB}</ProjectGuid>
+    <ProjectGuid>{1EDF2222-F6F8-4ED1-9F53-2FB73622DAEB}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>ProyectoSabado</RootNamespace>
-    <AssemblyName>ProyectoSabado</AssemblyName>
+    <RootNamespace>CapaPresentacion</RootNamespace>
+    <AssemblyName>CapaPresentacion</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -52,8 +52,35 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormularioBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioBase.Designer.cs">
+      <DependentUpon>FormularioBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBaseNuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBaseNuevo.Designer.cs">
+      <DependentUpon>FrmBaseNuevo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReclutamiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReclutamiento.Designer.cs">
+      <DependentUpon>FrmReclutamiento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormularioBase.resx">
+      <DependentUpon>FormularioBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBaseNuevo.resx">
+      <DependentUpon>FrmBaseNuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReclutamiento.resx">
+      <DependentUpon>FrmReclutamiento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -77,9 +104,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CapaPresentacion\CapaPresentacion.csproj">
-      <Project>{1edf2222-f6f8-4ed1-9f53-2fb73622daeb}</Project>
-      <Name>CapaPresentacion</Name>
+    <ProjectReference Include="..\CapaNegocio\CapaNegocio.csproj">
+      <Project>{d2d99806-c244-46bc-a7a9-e17e5ef4f1ad}</Project>
+      <Name>CapaNegocio</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
