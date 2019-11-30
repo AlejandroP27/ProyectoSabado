@@ -11,10 +11,10 @@ namespace CapaNegocio
     public class Nreclutamiento
     {
 
-        public static string insertar(int id_reclu, string nombre, string apellido, string direccion, int ci, DateTime fecha_naci, string nivel_acade, int celular)
+        public static string insertar(int codi, string nombre, string apellido, string direccion, int ci, DateTime fecha_naci, string nivel_acade, int celular)
         {
             Dreclutamiento obj = new Dreclutamiento();
-            obj.Id_reclu = id_reclu;
+            obj.Codi = codi;
             obj.Nombre = nombre;
             obj.Apellido = apellido;
             obj.Direccion = direccion;
@@ -30,7 +30,7 @@ namespace CapaNegocio
         public static string editar(int id_reclu, string nombre, string apellido, string direccion, int ci, DateTime fecha_naci, string nivel_acade, int celular)
         {
             Dreclutamiento obj = new Dreclutamiento();
-            obj.Id_reclu = id_reclu;
+            obj.Codi = id_reclu;
             obj.Nombre = nombre;
             obj.Apellido = apellido;
             obj.Direccion = direccion;
@@ -47,7 +47,7 @@ namespace CapaNegocio
         {
 
             Dreclutamiento obj = new Dreclutamiento();
-            obj.Id_reclu = id_reclu;
+            obj.Codi = id_reclu;
             return obj.eliminar(obj);
 
         }
@@ -56,7 +56,7 @@ namespace CapaNegocio
         {
             Dreclutamiento obj = new Dreclutamiento();
 
-            obj.Id_reclu = id_reclu;
+            obj.Codi = id_reclu;
             obj.Estado = estado;
 
             return obj.estado(obj);
@@ -81,7 +81,7 @@ namespace CapaNegocio
         {
             Dreclutamiento obj = new Dreclutamiento();
 
-            obj.Id_reclu = id_reclu;
+            obj.Codi = id_reclu;
             return obj.codiduplicado(obj);
         }
 

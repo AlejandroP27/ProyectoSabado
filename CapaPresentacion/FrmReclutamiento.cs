@@ -8,10 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaNegocio;
+using System.Runtime.InteropServices;
 
 namespace CapaPresentacion
 {
-    public partial class FrmReclutamiento : FrmBaseNuevo
+    public partial class FrmReclutamiento : Form
     {
 
         
@@ -26,38 +27,8 @@ namespace CapaPresentacion
 
         }
 
-        public override void insertar()
-        {
-
-            string rpta = "";
-            if (validar_formulario())
-            {
-                int duplicad = Nreclutamiento.duplicado(Convert.ToInt32(textBox1.Text));
-                if (duplicad > 0)
-                {
-                    MessageBox.Show("Codigo duplicado");
-                    textBox1.Focus();
-                }
-
-                else
-                {
-                    rpta = Nreclutamiento.insertar(Convert.ToInt32(textBox1.Text), textBox2.Text.Trim().ToUpper(),textBox3.Text,textBox4.Text,Convert.ToInt32(textBox5.Text),
-                        dateTimePicker1.Value,textBox7.Text,Convert.ToInt32(textBox8.Text));
-                }
-
-
-
-                if (rpta.Equals("ok"))
-                {
-
-                    MessageBox.Show("se añadio exitosamente!");
-                    Close();
-                }
-            }
-
-
-        }
-
+         
+        
 
         public bool validar_formulario()
         {
@@ -80,12 +51,18 @@ namespace CapaPresentacion
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string rpta = "";
 
-        }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
+            rpta = Nreclutamiento.insertar(Convert.ToInt32(textBox1.Text),textBox2.Text.Trim().ToUpper(), textBox3.Text.Trim().ToUpper(), textBox4.Text.Trim().ToUpper(), Convert.ToInt32(textBox5.Text), dateTimePicker1.Value, textBox6.Text.Trim().ToUpper(), Convert.ToInt32(textBox7.Text));
 
+
+
+            if (rpta.Equals("ok"))
+            {
+                MessageBox.Show("se añadio exitosamente!");
+                Close();
+            }
         }
     }
 }

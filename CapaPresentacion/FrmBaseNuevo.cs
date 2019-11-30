@@ -26,10 +26,5 @@ namespace CapaPresentacion
         {
             cancelar();
         }
-
-        private void FrmBaseNuevo_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
