@@ -11,28 +11,24 @@ using CapaNegocio;
 
 namespace CapaPresentacion
 {
-    public partial class FrmReclutamiento : FrmBaseNuevo
+    public partial class FrmCliente : FrmBaseNuevo
     {
-
-        
-
-        public FrmReclutamiento()
+        public FrmCliente()
         {
             InitializeComponent();
         }
 
-        private void FrmReclutamiento_Load(object sender, EventArgs e)
+        private void FrmCliente_Load(object sender, EventArgs e)
         {
 
         }
-
         public override void insertar()
         {
 
             string rpta = "";
             if (validar_formulario())
             {
-                int duplicad = Nreclutamiento.duplicado(Convert.ToInt32(textBox1.Text));
+                int duplicad = Ncliente.duplicado(Convert.ToInt32(textBox1.Text));
                 if (duplicad > 0)
                 {
                     MessageBox.Show("Codigo duplicado");
@@ -41,8 +37,8 @@ namespace CapaPresentacion
 
                 else
                 {
-                    rpta = Nreclutamiento.insertar(Convert.ToInt32(textBox1.Text), textBox2.Text.Trim().ToUpper(),textBox3.Text,textBox4.Text,Convert.ToInt32(textBox5.Text),
-                        dateTimePicker1.Value,textBox7.Text,Convert.ToInt32(textBox8.Text));
+                    rpta = Nreclutamiento.insertar(Convert.ToInt32(textBox1.Text), textBox2.Text.Trim().ToUpper(), textBox3.Text, textBox4.Text, Convert.ToInt32(textBox5.Text),
+                        dateTimePicker1.Value, textBox7.Text, Convert.ToInt32(textBox8.Text));
                 }
 
 
@@ -57,8 +53,6 @@ namespace CapaPresentacion
 
 
         }
-
-
         public bool validar_formulario()
         {
 
@@ -78,12 +72,22 @@ namespace CapaPresentacion
 
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void label4_Click(object sender, EventArgs e)
         {
 
         }

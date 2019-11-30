@@ -8,50 +8,41 @@ using System.Data.SqlClient;
 
 namespace CapaDatos
 {
-   public class Dreclutamiento
+    public class Dcliente
     {
-        private int _id_reclu;
+        private int _id_clien;
         private string _nombre;
-        private string _apellido;
+        private string _telefono;
         private string _direccion;
-        private int _ci;
-        private DateTime _fecha_naci;
-        private string _nivel_acade;
-        private int _celular;
+        private DateTime _fecha_crea;
+        private DateTime _fecha_sinc;
         private string _estado;
 
-       
-        public int Id_reclu { get => _id_reclu; set => _id_reclu = value; }
+
+        public int Id_clien { get => _id_clien; set => _id_clien = value; }
         public string Nombre { get => _nombre; set => _nombre = value; }
-        public string Apellido { get => _apellido; set => _apellido = value; }
+        public string Telefono { get => _telefono; set => _telefono = value; }
         public string Direccion { get => _direccion; set => _direccion = value; }
-        public int Ci { get => _ci; set => _ci = value; }   
-        public DateTime Fecha_naci { get => _fecha_naci; set => _fecha_naci = value; }
-        public string Nivel_acade { get => _nivel_acade; set => _nivel_acade = value; }
-        public int Celular { get => _celular; set => _celular = value; }
+        public DateTime Fecha_crea { get => _fecha_crea; set => _fecha_crea = value; }
+        public DateTime Fecha_sinc { get => _fecha_sinc; set => _fecha_sinc = value; }
         public string Estado { get => _estado; set => _estado = value; }
 
-
-        public Dreclutamiento(int id_reclu, string nombre, string apellido, string direccion, int ci, DateTime fecha_naci, string nivel_acade, int celular, string estado)
+        public Dcliente(int id_clien, string nombre, string telefono, string direccion, DateTime fecha_crea, DateTime fecha_sinc, string estado)
         {
-            this.Id_reclu = id_reclu;
+            this.Id_clien = id_clien;
             this.Nombre = nombre;
-            this.Apellido = apellido;
+            this.Telefono = telefono;
             this.Direccion = direccion;
-            this.Ci = ci;
-            this.Fecha_naci = fecha_naci;
-            this.Nivel_acade = nivel_acade;
-            this.Celular = celular;
+            this.Fecha_crea = fecha_crea;
+            this.Fecha_sinc = fecha_sinc;
             this.Estado = estado;
         }
 
-        public Dreclutamiento()
+        public Dcliente()
         {
 
         }
-
-
-        public string insertar(Dreclutamiento objreclutamiento)
+        public string Insertar(Dcliente objcliente)
         {
             string rpta = "";
 
@@ -63,61 +54,49 @@ namespace CapaDatos
                 sqlcon.Open();
 
                 SqlCommand sqlcmd = new SqlCommand();
-                sqlcmd.CommandText = "spinsertar_reclutamiento";
+                sqlcmd.CommandText = "spinsertar_cliente";
                 sqlcmd.Connection = sqlcon;
                 sqlcmd.CommandType = CommandType.StoredProcedure;
 
-                SqlParameter parci_actor = new SqlParameter();
-                parci_actor.ParameterName = "@id_reclu";
-                parci_actor.SqlDbType = SqlDbType.Int;
-                parci_actor.Value = objreclutamiento.Id_reclu;
-                sqlcmd.Parameters.Add(parci_actor);
+                SqlParameter parci_cliente = new SqlParameter();
+                parci_cliente.ParameterName = "@id_clien";
+                parci_cliente.SqlDbType = SqlDbType.Int;
+                parci_cliente.Value = objcliente.Id_clien;
+                sqlcmd.Parameters.Add(parci_cliente);
 
                 SqlParameter parnombre = new SqlParameter();
                 parnombre.ParameterName = "@nombre";
                 parnombre.SqlDbType = SqlDbType.VarChar;
                 parnombre.Size = 50;
-                parnombre.Value = objreclutamiento.Nombre;
+                parnombre.Value = objcliente.Nombre;
                 sqlcmd.Parameters.Add(parnombre);
 
-                SqlParameter parapellido = new SqlParameter();
-                parnombre.ParameterName = "@apellido";
-                parnombre.SqlDbType = SqlDbType.VarChar;
-                parnombre.Size = 50;
-                parnombre.Value = objreclutamiento.Apellido;
-                sqlcmd.Parameters.Add(parapellido);
+                SqlParameter partelefono = new SqlParameter();
+                partelefono.ParameterName = "@telefono";
+                partelefono.SqlDbType = SqlDbType.VarChar;
+                partelefono.Size = 50;
+                partelefono.Value = objcliente.Telefono;
+                sqlcmd.Parameters.Add(partelefono);
 
                 SqlParameter pardirec = new SqlParameter();
-                parnombre.ParameterName = "@direccion";
-                parnombre.SqlDbType = SqlDbType.VarChar;
-                parnombre.Size = 50;
-                parnombre.Value = objreclutamiento.Direccion;
+                pardirec.ParameterName = "@direccion";
+                pardirec.SqlDbType = SqlDbType.VarChar;
+                pardirec.Size = 50;
+                pardirec.Value = objcliente.Direccion;
                 sqlcmd.Parameters.Add(pardirec);
 
-                SqlParameter parci_ci = new SqlParameter();
-                parci_actor.ParameterName = "@ci";
-                parci_actor.SqlDbType = SqlDbType.Int;
-                parci_actor.Value = objreclutamiento.Ci;
-                sqlcmd.Parameters.Add(parci_ci);
+                SqlParameter ParFechac = new SqlParameter();
+                ParFechac.ParameterName = "@fecha_crea";
+                ParFechac.SqlDbType = SqlDbType.Date;
+                ParFechac.Value = objcliente.Fecha_crea;
+                sqlcmd.Parameters.Add(ParFechac);
 
-                SqlParameter ParFecha = new SqlParameter();
-                ParFecha.ParameterName = "@fecha_naci";
-                ParFecha.SqlDbType = SqlDbType.Date;
-                ParFecha.Value = objreclutamiento.Fecha_naci;
-                sqlcmd.Parameters.Add(ParFecha);
+                SqlParameter ParFechas = new SqlParameter();
+                ParFechas.ParameterName = "@fecha_crea";
+                ParFechas.SqlDbType = SqlDbType.Date;
+                ParFechas.Value = objcliente.Fecha_crea;
+                sqlcmd.Parameters.Add(ParFechas);
 
-                SqlParameter parnivel = new SqlParameter();
-                parnombre.ParameterName = "@nivel_acade";
-                parnombre.SqlDbType = SqlDbType.VarChar;
-                parnombre.Size = 50;
-                parnombre.Value = objreclutamiento.Nivel_acade;
-                sqlcmd.Parameters.Add(parnivel);
-
-                SqlParameter parcelular = new SqlParameter();
-                parci_actor.ParameterName = "@celular";
-                parci_actor.SqlDbType = SqlDbType.Int;
-                parci_actor.Value = objreclutamiento.Celular;
-                sqlcmd.Parameters.Add(parcelular);
 
 
                 rpta = sqlcmd.ExecuteNonQuery() == 1 ? "ok" : "no se inserto nada";
@@ -142,7 +121,7 @@ namespace CapaDatos
 
 
 
-        public string editar(Dreclutamiento objreclutamiento)
+        public string editar(Dcliente objcliente)
         {
             string rpta = "";
 
@@ -154,61 +133,49 @@ namespace CapaDatos
                 sqlcon.Open();
 
                 SqlCommand sqlcmd = new SqlCommand();
-                sqlcmd.CommandText = "speditar_reclutamiento";
+                sqlcmd.CommandText = "speditar_cliente";
                 sqlcmd.Connection = sqlcon;
                 sqlcmd.CommandType = CommandType.StoredProcedure;
 
-                SqlParameter parci_actor = new SqlParameter();
-                parci_actor.ParameterName = "@id_reclu";
-                parci_actor.SqlDbType = SqlDbType.Int;
-                parci_actor.Value = objreclutamiento.Id_reclu;
-                sqlcmd.Parameters.Add(parci_actor);
+                SqlParameter parci_cliente = new SqlParameter();
+                parci_cliente.ParameterName = "@id_clien";
+                parci_cliente.SqlDbType = SqlDbType.Int;
+                parci_cliente.Value = objcliente.Id_clien;
+                sqlcmd.Parameters.Add(parci_cliente);
 
                 SqlParameter parnombre = new SqlParameter();
                 parnombre.ParameterName = "@nombre";
                 parnombre.SqlDbType = SqlDbType.VarChar;
                 parnombre.Size = 50;
-                parnombre.Value = objreclutamiento.Nombre;
+                parnombre.Value = objcliente.Nombre;
                 sqlcmd.Parameters.Add(parnombre);
 
-                SqlParameter parapellido = new SqlParameter();
-                parnombre.ParameterName = "@apellido";
-                parnombre.SqlDbType = SqlDbType.VarChar;
-                parnombre.Size = 50;
-                parnombre.Value = objreclutamiento.Apellido;
-                sqlcmd.Parameters.Add(parapellido);
+                SqlParameter partelefono = new SqlParameter();
+                partelefono.ParameterName = "@telefono";
+                partelefono.SqlDbType = SqlDbType.VarChar;
+                partelefono.Size = 50;
+                partelefono.Value = objcliente.Telefono;
+                sqlcmd.Parameters.Add(partelefono);
 
                 SqlParameter pardirec = new SqlParameter();
-                parnombre.ParameterName = "@direccion";
-                parnombre.SqlDbType = SqlDbType.VarChar;
-                parnombre.Size = 50;
-                parnombre.Value = objreclutamiento.Direccion;
+                pardirec.ParameterName = "@direccion";
+                pardirec.SqlDbType = SqlDbType.VarChar;
+                pardirec.Size = 50;
+                parnombre.Value = objcliente.Direccion;
                 sqlcmd.Parameters.Add(pardirec);
 
-                SqlParameter parci_ci = new SqlParameter();
-                parci_actor.ParameterName = "@ci";
-                parci_actor.SqlDbType = SqlDbType.Int;
-                parci_actor.Value = objreclutamiento.Ci;
-                sqlcmd.Parameters.Add(parci_ci);
+                SqlParameter ParFechac = new SqlParameter();
+                ParFechac.ParameterName = "@fecha_crea";
+                ParFechac.SqlDbType = SqlDbType.Date;
+                ParFechac.Value = objcliente.Fecha_crea;
+                sqlcmd.Parameters.Add(ParFechac);
 
-                SqlParameter ParFecha = new SqlParameter();
-                ParFecha.ParameterName = "@fecha_naci";
-                ParFecha.SqlDbType = SqlDbType.Date;
-                ParFecha.Value = objreclutamiento.Fecha_naci;
-                sqlcmd.Parameters.Add(ParFecha);
+                SqlParameter ParFechas = new SqlParameter();
+                ParFechas.ParameterName = "@fecha_sinc";
+                ParFechas.SqlDbType = SqlDbType.Date;
+                ParFechas.Value = objcliente.Fecha_sinc;
+                sqlcmd.Parameters.Add(ParFechas);
 
-                SqlParameter parnivel = new SqlParameter();
-                parnombre.ParameterName = "@nivel_acade";
-                parnombre.SqlDbType = SqlDbType.VarChar;
-                parnombre.Size = 50;
-                parnombre.Value = objreclutamiento.Nivel_acade;
-                sqlcmd.Parameters.Add(parnivel);
-
-                SqlParameter parcelular = new SqlParameter();
-                parci_actor.ParameterName = "@celular";
-                parci_actor.SqlDbType = SqlDbType.Int;
-                parci_actor.Value = objreclutamiento.Celular;
-                sqlcmd.Parameters.Add(parcelular);
 
                 rpta = sqlcmd.ExecuteNonQuery() == 1 ? "ok" : "no se edito nada";
 
@@ -230,7 +197,7 @@ namespace CapaDatos
 
         }
 
-        public string estado(Dreclutamiento objactor)
+        public string estado(Dcliente objcliente)
         {
             string rpta = "";
             SqlConnection sqlcon = new SqlConnection();
@@ -241,21 +208,21 @@ namespace CapaDatos
                 sqlcon.Open();
 
                 SqlCommand sqlcmd = new SqlCommand();
-                sqlcmd.CommandText = "spestado_reclutamiento";
+                sqlcmd.CommandText = "spestado_cliente";
                 sqlcmd.Connection = sqlcon;
                 sqlcmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter parcod = new SqlParameter();
-                parcod.ParameterName = "id_reclu";
+                parcod.ParameterName = "id_clien";
                 parcod.SqlDbType = SqlDbType.Int;
-                parcod.Value = objactor.Id_reclu;
+                parcod.Value = objcliente.Id_clien;
                 sqlcmd.Parameters.Add(parcod);
 
                 SqlParameter parestado = new SqlParameter();
                 parestado.ParameterName = "estado";
                 parestado.SqlDbType = SqlDbType.VarChar;
                 parestado.Size = 50;
-                parestado.Value = objactor.Estado;
+                parestado.Value = objcliente.Estado;
                 sqlcmd.Parameters.Add(parestado);
 
                 rpta = sqlcmd.ExecuteNonQuery() == 1 ? "ok" : "No se edito";
@@ -274,7 +241,7 @@ namespace CapaDatos
         }
 
 
-        public string eliminar(Dreclutamiento objactor)
+        public string eliminar(Dcliente objcliente)
         {
             string rpta = "";
 
@@ -286,14 +253,14 @@ namespace CapaDatos
                 sqlcon.Open();
 
                 SqlCommand sqlcmd = new SqlCommand();
-                sqlcmd.CommandText = "speliminar_reclutamiento";
+                sqlcmd.CommandText = "speliminar_cliente";
                 sqlcmd.Connection = sqlcon;
                 sqlcmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter parciactor = new SqlParameter();
-                parciactor.ParameterName = "@id_reclu";
+                parciactor.ParameterName = "@id_client";
                 parciactor.SqlDbType = SqlDbType.Int;
-                parciactor.Value = objactor.Id_reclu;
+                parciactor.Value = objcliente.Id_clien;
                 sqlcmd.Parameters.Add(parciactor);
 
 
@@ -320,14 +287,14 @@ namespace CapaDatos
 
         public DataTable mostrar()
         {
-            DataTable dataresul = new DataTable("reclutamiento");
+            DataTable dataresul = new DataTable("cliente");
             SqlConnection sqlcon = new SqlConnection();
 
             try
             {
                 sqlcon.ConnectionString = Conexion.Cn;
                 SqlCommand sqlcmd = new SqlCommand();
-                sqlcmd.CommandText = "spmostrar_reclutamiento";
+                sqlcmd.CommandText = "spmostrar_cliente";
                 sqlcmd.Connection = sqlcon;
                 sqlcmd.CommandType = CommandType.StoredProcedure;
 
@@ -346,7 +313,7 @@ namespace CapaDatos
 
         }
 
-        public int codiduplicado(Dreclutamiento objactor)
+        public int codiduplicado(Dcliente objcliente)
         {
             int rpta = 0;
 
@@ -357,14 +324,14 @@ namespace CapaDatos
                 sqlcon.Open();
 
                 SqlCommand sqlcmd = new SqlCommand();
-                sqlcmd.CommandText = "spcodiduplicado_reclutamiento";
+                sqlcmd.CommandText = "spcodiduplicado_cliente";
                 sqlcmd.Connection = sqlcon;
                 sqlcmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter parduplicado = new SqlParameter();
-                parduplicado.ParameterName = "id_reclu";
+                parduplicado.ParameterName = "id_clien";
                 parduplicado.SqlDbType = SqlDbType.Int;
-                parduplicado.Value = objactor.Id_reclu;
+                parduplicado.Value = objcliente.Id_clien;
                 sqlcmd.Parameters.Add(parduplicado);
                 //el parametro executescalar sirve para comparar de todos los registros contados y de vuelve una sola fila
                 rpta = Convert.ToInt32(sqlcmd.ExecuteScalar());
@@ -384,9 +351,9 @@ namespace CapaDatos
         }
 
 
-        public DataTable estadostodos(Dreclutamiento objactor)
+        public DataTable estadostodos(Dcliente objcliente)
         {
-            DataTable datoscategoria = new DataTable("reclutamiento");
+            DataTable datoscategoria = new DataTable("cliente");
 
             SqlConnection sqlcone = new SqlConnection();
 
@@ -395,13 +362,13 @@ namespace CapaDatos
                 sqlcone.ConnectionString = Conexion.Cn;
                 SqlCommand sqlcmd = new SqlCommand();
                 sqlcmd.Connection = sqlcone;
-                sqlcmd.CommandText = "spestadostodos_reclutamiento";
+                sqlcmd.CommandText = "spestadostodos_cliente";
                 sqlcmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter parbuscar = new SqlParameter();
                 parbuscar.ParameterName = "@estado";
                 parbuscar.SqlDbType = SqlDbType.VarChar;
-                parbuscar.Value = objactor.Estado;
+                parbuscar.Value = objcliente.Estado;
                 sqlcmd.Parameters.Add(parbuscar);
 
                 SqlDataAdapter sqldata = new SqlDataAdapter(sqlcmd);
@@ -419,5 +386,7 @@ namespace CapaDatos
 
         }
 
-    }
+    }  
+
 }
+
