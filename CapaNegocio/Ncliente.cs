@@ -10,29 +10,31 @@ namespace CapaNegocio
 {
     public class Ncliente
     {
-        public static string insertar(int id_clien, string nombre, string telefono, string direccion, DateTime fecha_crea, DateTime fecha_sinc, string estado)
+
+
+        public static string insertar(int id_clien, string nombre, string telefono, string direccion, DateTime fecha_crea, DateTime fecha_sinc)
         {
             Dcliente obj = new Dcliente();
-            obj.Id_clien = id_clien;
-            obj.Nombre = nombre;
-            obj.Telefono = telefono;
-            obj.Direccion = direccion;
-            obj.Fecha_crea = fecha_crea;
-            obj.Fecha_sinc = fecha_sinc;
+            obj.id_clien = id_clien;
+            obj.nombre = nombre;
+            obj.telefono = telefono;
+            obj.direccion = direccion;
+            obj.fecha_crea = fecha_crea;
+            obj.fecha_sinc = fecha_sinc;
 
             return obj.Insertar(obj);
 
         }
 
-        public static string editar(int id_clien, string nombre, string telefono, string direccion, DateTime fecha_crea, DateTime fecha_sinc, string estado)
+        public static string editar(int id_clien, string nombre, string telefono, string direccion, DateTime fecha_crea, DateTime fecha_sinc)
         {
             Dcliente obj = new Dcliente();
-            obj.Id_clien = id_clien;
-            obj.Nombre = nombre;
-            obj.Telefono = telefono;
-            obj.Direccion = direccion;
-            obj.Fecha_crea = fecha_crea;
-            obj.Fecha_sinc = fecha_sinc;
+            obj.id_clien = id_clien;
+            obj.nombre = nombre;
+            obj.telefono = telefono;
+            obj.direccion = direccion;
+            obj.fecha_crea = fecha_crea;
+            obj.fecha_sinc = fecha_sinc;
 
             return obj.editar(obj);
 
@@ -42,7 +44,7 @@ namespace CapaNegocio
         {
 
             Dcliente obj = new Dcliente();
-            obj.Id_clien = id_clien;
+            obj.id_clien = id_clien;
             return obj.eliminar(obj);
 
         }
@@ -51,10 +53,10 @@ namespace CapaNegocio
         {
             Dcliente obj = new Dcliente();
 
-            obj.Id_clien = id_clien;
-            obj.Estado = estado;
+            obj.id_clien = id_clien;
+            obj.estado = estado;
 
-            return obj.estado(obj);
+            return obj.estadocliente(obj);
         }
 
 
@@ -72,18 +74,18 @@ namespace CapaNegocio
         //    return obj.buscarnombre(obj);
         //}
 
-        public static int duplicado(int id_reclu)
+        public static int duplicado(int id_clien)
         {
-            Dreclutamiento obj = new Dreclutamiento();
+            Dcliente obj = new Dcliente();
 
-            obj.Id_reclu = id_reclu;
+            obj.id_clien = id_clien;
             return obj.codiduplicado(obj);
         }
 
         public static DataTable estadotodos(string estado)
         {
             Dcliente obj = new Dcliente();
-            obj.Estado = estado;
+            obj.estado = estado;
             return obj.estadostodos(obj);
         }
     }

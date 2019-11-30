@@ -37,8 +37,8 @@ namespace CapaPresentacion
 
                 else
                 {
-                    rpta = Nreclutamiento.insertar(Convert.ToInt32(textBox1.Text), textBox2.Text.Trim().ToUpper(), textBox3.Text, textBox4.Text, Convert.ToInt32(textBox5.Text),
-                        dateTimePicker1.Value, textBox7.Text, Convert.ToInt32(textBox8.Text));
+                    rpta = Ncliente.insertar(Convert.ToInt32(textBox1.Text), textBox2.Text.Trim().ToUpper(), textBox3.Text, textBox4.Text,
+                        dateTimePicker1.Value, dateTimePicker2.Value);
                 }
 
 
@@ -64,7 +64,7 @@ namespace CapaPresentacion
             }
             if (textBox2.Text.Trim().Length < 1)
             {
-                MessageBox.Show("Ingrese el Descripcion");
+                MessageBox.Show("Ingrese el nombre");
                 return false;
             }
 
