@@ -44,6 +44,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Ncliente.cs" />
     <Compile Include="Nencuesta.cs" />
+    <Compile Include="Nencuestador.cs" />
     <Compile Include="Nreclutamiento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -68,11 +68,11 @@ namespace CapaDatos
                 parencuesta.Value = objencuestador.Idencuesta;
                 sqlcmd.Parameters.Add(parencuesta);
 
-                SqlParameter parrecluta = new SqlParameter();
-                parrecluta.ParameterName = "@apellido";
-                parrecluta.SqlDbType = SqlDbType.Int;
-                parrecluta.Value = objencuestador.Idreclutamiento;
-                sqlcmd.Parameters.Add(parrecluta);
+                SqlParameter parecluta = new SqlParameter();
+                parecluta.ParameterName = "@id_reclutamiento";
+                parecluta.SqlDbType = SqlDbType.Int;
+                parecluta.Value = objencuestador.Idreclutamiento;
+                sqlcmd.Parameters.Add(parecluta);
 
                 SqlParameter ParFecha = new SqlParameter();
                 ParFecha.ParameterName = "@fecha_crea";
