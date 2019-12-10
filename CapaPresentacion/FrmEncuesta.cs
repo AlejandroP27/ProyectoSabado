@@ -70,5 +70,12 @@ namespace CapaPresentacion
                 }
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            FrmBusCliente fr = new FrmBusCliente();
+
+            fr.Show();
+        }
     }
 }

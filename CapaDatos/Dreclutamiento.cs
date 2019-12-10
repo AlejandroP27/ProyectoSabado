@@ -18,19 +18,21 @@ namespace CapaDatos
         private DateTime _fecha_naci;
         private string _nivel_acade;
         private int _celular;
+        private DateTime _fecha_crea;
         private string _estado;
 
         public int Codi { get => _codi; set => _codi = value; }
         public string Nombre { get => _nombre; set => _nombre = value; }
         public string Apellido { get => _apellido; set => _apellido = value; }
         public string Direccion { get => _direccion; set => _direccion = value; }
-        public int Ci { get => _ci; set => _ci = value; }   
+        public int Ci { get => _ci; set => _ci = value; }
         public DateTime Fecha_naci { get => _fecha_naci; set => _fecha_naci = value; }
         public string Nivel_acade { get => _nivel_acade; set => _nivel_acade = value; }
         public int Celular { get => _celular; set => _celular = value; }
+        public DateTime Fecha_crea { get => _fecha_crea; set => _fecha_crea = value; }
         public string Estado { get => _estado; set => _estado = value; }
 
-        public Dreclutamiento(int idreclu, string nombre, string apellido, string direccion, int ci, DateTime fecha_naci, string nivel_acade, int celular, string estado)
+        public Dreclutamiento(int idreclu, string nombre, string apellido, string direccion, int ci, DateTime fecha_naci, string nivel_acade, int celular, DateTime fecha_crea, string estado)
         {
             this.Codi = idreclu;
             this.Nombre = nombre;
@@ -40,6 +42,7 @@ namespace CapaDatos
             this.Fecha_naci = fecha_naci;
             this.Nivel_acade = nivel_acade;
             this.Celular = celular;
+            this.Fecha_crea = fecha_crea;
             this.Estado = estado;
         }
 
