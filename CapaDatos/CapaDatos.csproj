@@ -45,6 +45,7 @@
     <Compile Include="Conexion.cs" />
     <Compile Include="Dcliente.cs" />
     <Compile Include="Dencuesta.cs" />
+    <Compile Include="Dencuestador.cs" />
     <Compile Include="Dreclutamiento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

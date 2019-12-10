@@ -82,6 +82,12 @@
     <Compile Include="FrmEncuesta.Designer.cs">
       <DependentUpon>FrmEncuesta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frmencuestador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frmencuestador.Designer.cs">
+      <DependentUpon>Frmencuestador.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmReclutamiento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmEncuesta.resx">
       <DependentUpon>FrmEncuesta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frmencuestador.resx">
+      <DependentUpon>Frmencuestador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmReclutamiento.resx">
       <DependentUpon>FrmReclutamiento.cs</DependentUpon>
