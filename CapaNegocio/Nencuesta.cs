@@ -12,46 +12,43 @@ namespace CapaNegocio
     {
 
 
-        public static string insertar(int idencuesta, int id_cliente, string nombre, string descripcion, DateTime fecha_ini, DateTime fecha_fin, DateTime fecha_crea, DateTime fecha_sinc)
+        public static string insertar(int id_encuesta, int idcliente, string nombre, string descripcion, DateTime fecha_ini, DateTime fecha_fin)
         {
             Dencuesta obj = new Dencuesta();
 
-            obj.Idencuesta = idencuesta;
-            obj.Id_cliente = id_cliente;
+            obj.Id_encuesta = id_encuesta;
+            obj.Idcliente = idcliente;
             obj.Nombre = nombre;
             obj.Descripcion = descripcion;
             obj.Fecha_ini = fecha_ini;
             obj.Fecha_fin = fecha_fin;
-            obj.Fecha_crea = fecha_crea;
-            obj.Fecha_sinc = fecha_sinc;
+            
         
 
             return obj.Insertar(obj);
 
         }
 
-        public static string editar(int idencuesta, int id_cliente, string nombre, string descripcion, DateTime fecha_ini, DateTime fecha_fin, DateTime fecha_crea, DateTime fecha_sinc)
+        public static string editar(int id_encuesta, int id_cliente, string nombre, string descripcion, DateTime fecha_ini, DateTime fecha_fin)
         {
             Dencuesta obj = new Dencuesta();
-            obj.Idencuesta = idencuesta;
-            obj.Id_cliente = id_cliente;
+            obj.Id_encuesta = id_encuesta;
+            obj.Idcliente = id_cliente;
             obj.Nombre = nombre;
             obj.Descripcion = descripcion;
             obj.Fecha_ini = fecha_ini;
             obj.Fecha_fin = fecha_fin;
-            obj.Fecha_crea = fecha_crea;
-            obj.Fecha_sinc = fecha_sinc;
 
 
             return obj.editar(obj);
 
         }
 
-        public static string eliminar(int idencuesta)
+        public static string eliminar(int id_encuesta)
         {
 
             Dencuesta obj = new Dencuesta();
-            obj.Idencuesta = idencuesta;
+            obj.Id_encuesta = id_encuesta;
             return obj.eliminar(obj);
 
         }
@@ -60,7 +57,7 @@ namespace CapaNegocio
         {
             Dencuesta obj = new Dencuesta();
 
-            obj.Idencuesta = idencuesta;
+            obj.Id_encuesta = idencuesta;
             obj.Estado = estado;
 
             return obj.estadoencuesta(obj);
@@ -85,7 +82,7 @@ namespace CapaNegocio
         {
             Dencuesta obj = new Dencuesta();
 
-            obj.Idencuesta = idencuesta;
+            obj.Id_encuesta = idencuesta;
             return obj.codiduplicado(obj);
         }
 
