@@ -11,7 +11,7 @@ namespace CapaNegocio
     public class Nreclutamiento
     {
 
-        public static string insertar(int codi, string nombre, string apellido, string direccion, int ci, DateTime fecha_naci, string nivel_acade, int celular)
+        public static string insertar(int codi, string nombre, string apellido, string direccion, int ci, DateTime fecha_naci, string nivel_acade, int celular, DateTime fecha_crea)
         {
             Dreclutamiento obj = new Dreclutamiento();
             obj.Codi = codi;
@@ -22,6 +22,7 @@ namespace CapaNegocio
             obj.Fecha_naci = fecha_naci;
             obj.Nivel_acade = nivel_acade;
             obj.Celular = celular;
+            obj.Fecha_crea = fecha_crea;
 
             return obj.insertar(obj);
 

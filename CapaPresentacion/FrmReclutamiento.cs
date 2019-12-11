@@ -54,7 +54,7 @@ namespace CapaPresentacion
             string rpta = "";
 
 
-            rpta = Nreclutamiento.insertar(Convert.ToInt32(textBox1.Text),textBox2.Text.Trim().ToUpper(), textBox3.Text.Trim().ToUpper(), textBox4.Text.Trim().ToUpper(), Convert.ToInt32(textBox5.Text), dateTimePicker1.Value, textBox6.Text.Trim().ToUpper(), Convert.ToInt32(textBox7.Text));
+            rpta = Nreclutamiento.insertar(Convert.ToInt32(textBox1.Text),textBox2.Text.Trim().ToUpper(), textBox3.Text.Trim().ToUpper(), textBox4.Text.Trim().ToUpper(), Convert.ToInt32(textBox5.Text), dateTimePicker1.Value, textBox6.Text.Trim().ToUpper(), Convert.ToInt32(textBox7.Text), dateTimePicker2.Value);
 
 
 
@@ -63,6 +63,16 @@ namespace CapaPresentacion
                 MessageBox.Show("se añadio exitosamente!");
                 Close();
             }
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

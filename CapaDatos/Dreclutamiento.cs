@@ -122,6 +122,12 @@ namespace CapaDatos
                 parcelular.Value = objreclutamiento.Celular;
                 sqlcmd.Parameters.Add(parcelular);
 
+                SqlParameter parfechacrea = new SqlParameter();
+                parfechacrea.ParameterName = "@fecha_crea";
+                parfechacrea.SqlDbType = SqlDbType.DateTime;
+                parfechacrea.Value = objreclutamiento.Fecha_crea;
+                sqlcmd.Parameters.Add(parfechacrea);
+
 
                 rpta = sqlcmd.ExecuteNonQuery() == 1 ? "ok" : "no se inserto nada";
 
