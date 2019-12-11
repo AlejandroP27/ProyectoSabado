@@ -24,13 +24,12 @@ namespace CapaDatos
         public DateTime Fecha_sinc { get => _fecha_sinc; set => _fecha_sinc = value; }
         public string Estado { get => _estado; set => _estado = value; }
 
-        public Dencuestador(int idencuestador, int idencuesta, int idreclutamiento, DateTime fecha_crea, DateTime fecha_sinc, string estado)
+        public Dencuestador(int idencuestador, int idencuesta, int idreclutamiento, DateTime fecha_crea, string estado)
         {
             this.Idencuestador = idencuestador;
             this.Idencuesta = idencuesta;
             this.Idreclutamiento = idreclutamiento;
             this.Fecha_crea = fecha_crea;
-            this.Fecha_sinc = fecha_sinc;
             this.Estado = estado;
         }
 

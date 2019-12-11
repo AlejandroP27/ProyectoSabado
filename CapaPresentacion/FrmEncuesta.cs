@@ -57,7 +57,7 @@ namespace CapaPresentacion
                 else
                 {
                     rpta = Nencuesta.insertar(Convert.ToInt32(txtIdEncues.Text), Convert.ToInt32(txtcliente.Text), txtNombre.Text.Trim().ToUpper(), txtDescrip.Text,
-                        dtpFechaini.Value, dtpFechafin.Value, dtpFechacrea.Value, dtpFechasinc.Value);
+                        dtpFechaini.Value, dtpFechafin.Value);
                 }
 
 

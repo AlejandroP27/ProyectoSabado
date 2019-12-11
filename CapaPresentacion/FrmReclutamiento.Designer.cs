@@ -196,7 +196,6 @@
             this.label9.Size = new System.Drawing.Size(96, 13);
             this.label9.TabIndex = 93;
             this.label9.Text = "Fecha de creación";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // dateTimePicker2
             // 
@@ -205,13 +204,12 @@
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(182, 20);
             this.dateTimePicker2.TabIndex = 92;
-            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // FrmReclutamiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(557, 429);
+            this.ClientSize = new System.Drawing.Size(513, 429);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.label8);
