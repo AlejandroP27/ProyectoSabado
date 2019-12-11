@@ -56,7 +56,7 @@ namespace CapaPresentacion
 
             //    else
             //    {
-            rpta = Nencuestador.insertar(Convert.ToInt32(txt1.Text), Convert.ToInt32(txt2.Text), Convert.ToInt32(txt3.Text), dtpFechacrea.Value, dtpFechasinc.Value);
+            rpta = Nencuestador.insertar(Convert.ToInt32(txt1.Text), Convert.ToInt32(txt2.Text), Convert.ToInt32(txt3.Text), txt3.Text, txt4.Text);
                 //}
 
 

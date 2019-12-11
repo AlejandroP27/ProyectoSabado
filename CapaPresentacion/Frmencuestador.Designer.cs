@@ -31,18 +31,18 @@
             this.button3 = new System.Windows.Forms.Button();
             this.txt2 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.dtpFechasinc = new System.Windows.Forms.DateTimePicker();
-            this.dtpFechacrea = new System.Windows.Forms.DateTimePicker();
             this.txt3 = new System.Windows.Forms.TextBox();
             this.txt1 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.txt4 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txt5 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button3
@@ -70,20 +70,6 @@
             this.label8.TabIndex = 35;
             this.label8.Text = "Codigo de Encuesta";
             // 
-            // dtpFechasinc
-            // 
-            this.dtpFechasinc.Location = new System.Drawing.Point(179, 181);
-            this.dtpFechasinc.Name = "dtpFechasinc";
-            this.dtpFechasinc.Size = new System.Drawing.Size(219, 20);
-            this.dtpFechasinc.TabIndex = 34;
-            // 
-            // dtpFechacrea
-            // 
-            this.dtpFechacrea.Location = new System.Drawing.Point(179, 146);
-            this.dtpFechacrea.Name = "dtpFechacrea";
-            this.dtpFechacrea.Size = new System.Drawing.Size(219, 20);
-            this.dtpFechacrea.TabIndex = 33;
-            // 
             // txt3
             // 
             this.txt3.Location = new System.Drawing.Point(179, 103);
@@ -97,24 +83,6 @@
             this.txt1.Name = "txt1";
             this.txt1.Size = new System.Drawing.Size(219, 20);
             this.txt1.TabIndex = 28;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(33, 187);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(109, 13);
-            this.label7.TabIndex = 27;
-            this.label7.Text = "Fecha Sincronizacion";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(33, 152);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(81, 13);
-            this.label6.TabIndex = 26;
-            this.label6.Text = "Fecha creación";
             // 
             // label2
             // 
@@ -136,7 +104,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(280, 265);
+            this.button2.Location = new System.Drawing.Point(280, 235);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 19);
             this.button2.TabIndex = 20;
@@ -145,7 +113,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(129, 265);
+            this.button1.Location = new System.Drawing.Point(129, 235);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 19;
@@ -171,22 +139,54 @@
             this.button5.Text = "Buscar";
             this.button5.UseVisualStyleBackColor = true;
             // 
+            // txt4
+            // 
+            this.txt4.Location = new System.Drawing.Point(179, 138);
+            this.txt4.Name = "txt4";
+            this.txt4.Size = new System.Drawing.Size(219, 20);
+            this.txt4.TabIndex = 43;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(33, 138);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 13);
+            this.label3.TabIndex = 42;
+            this.label3.Text = "Instancia:";
+            // 
+            // txt5
+            // 
+            this.txt5.Location = new System.Drawing.Point(179, 173);
+            this.txt5.Name = "txt5";
+            this.txt5.Size = new System.Drawing.Size(219, 20);
+            this.txt5.TabIndex = 41;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(33, 173);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(78, 13);
+            this.label4.TabIndex = 40;
+            this.label4.Text = "Base de datos:";
+            // 
             // Frmencuestador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(523, 450);
+            this.ClientSize = new System.Drawing.Size(523, 296);
+            this.Controls.Add(this.txt4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txt5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.txt2);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.dtpFechasinc);
-            this.Controls.Add(this.dtpFechacrea);
             this.Controls.Add(this.txt3);
             this.Controls.Add(this.txt1);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
@@ -204,17 +204,17 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox txt2;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DateTimePicker dtpFechasinc;
-        private System.Windows.Forms.DateTimePicker dtpFechacrea;
         private System.Windows.Forms.TextBox txt3;
         private System.Windows.Forms.TextBox txt1;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox txt4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txt5;
+        private System.Windows.Forms.Label label4;
     }
 }
