@@ -13,24 +13,27 @@ namespace CapaDatos
         private int _idencuestador;
         private int _idencuesta;
         private int _idreclutamiento;
+        private string _instancia;
+        private string _basededatos;
         private DateTime _fecha_crea;
-        private DateTime _fecha_sinc;
         private string _estado;
 
         public int Idencuestador { get => _idencuestador; set => _idencuestador = value; }
         public int Idencuesta { get => _idencuesta; set => _idencuesta = value; }
         public int Idreclutamiento { get => _idreclutamiento; set => _idreclutamiento = value; }
         public DateTime Fecha_crea { get => _fecha_crea; set => _fecha_crea = value; }
-        public DateTime Fecha_sinc { get => _fecha_sinc; set => _fecha_sinc = value; }
         public string Estado { get => _estado; set => _estado = value; }
+        public string Instancia { get => _instancia; set => _instancia = value; }
+        public string Basededatos { get => _basededatos; set => _basededatos = value; }
 
-        public Dencuestador(int idencuestador, int idencuesta, int idreclutamiento, DateTime fecha_crea, DateTime fecha_sinc, string estado)
+        public Dencuestador(int idencuestador, int idencuesta, int idreclutamiento,string instancia,string basededatos, DateTime fecha_crea, string estado)
         {
             this.Idencuestador = idencuestador;
             this.Idencuesta = idencuesta;
             this.Idreclutamiento = idreclutamiento;
+            this.Instancia = instancia;
+            this.Basededatos = basededatos;
             this.Fecha_crea = fecha_crea;
-            this.Fecha_sinc = fecha_sinc;
             this.Estado = estado;
         }
 
@@ -74,17 +77,19 @@ namespace CapaDatos
                 parecluta.Value = objencuestador.Idreclutamiento;
                 sqlcmd.Parameters.Add(parecluta);
 
-                SqlParameter ParFecha = new SqlParameter();
-                ParFecha.ParameterName = "@fecha_crea";
-                ParFecha.SqlDbType = SqlDbType.DateTime;
-                ParFecha.Value = objencuestador.Fecha_crea;
-                sqlcmd.Parameters.Add(ParFecha);
+                SqlParameter parinstancia = new SqlParameter();
+                parinstancia.ParameterName = "@instancia";
+                parinstancia.SqlDbType = SqlDbType.VarChar;
+                parinstancia.Size = 50;
+                parinstancia.Value = objencuestador.Instancia;
+                sqlcmd.Parameters.Add(parinstancia);
 
-                SqlParameter ParFechasinc = new SqlParameter();
-                ParFechasinc.ParameterName = "@fecha_sinc";
-                ParFechasinc.SqlDbType = SqlDbType.DateTime;
-                ParFechasinc.Value = objencuestador.Fecha_sinc;
-                sqlcmd.Parameters.Add(ParFechasinc);
+                SqlParameter parbasededatos = new SqlParameter();
+                parbasededatos.ParameterName = "@basededatos";
+                parbasededatos.SqlDbType = SqlDbType.VarChar;
+                parbasededatos.Size = 50;
+                parbasededatos.Value = objencuestador.Basededatos;
+                sqlcmd.Parameters.Add(parbasededatos);
 
 
                 rpta = sqlcmd.ExecuteNonQuery() == 1 ? "ok" : "no se inserto nada";
@@ -109,281 +114,255 @@ namespace CapaDatos
 
 
 
-        //public string editar(Dreclutamiento objreclutamiento)
-        //{
-        //    string rpta = "";
-
-        //    SqlConnection sqlcon = new SqlConnection();
-
-        //    try
-        //    {
-        //        sqlcon.ConnectionString = Conexion.Cn;
-        //        sqlcon.Open();
-
-        //        SqlCommand sqlcmd = new SqlCommand();
-        //        sqlcmd.CommandText = "speditar_reclutamiento";
-        //        sqlcmd.Connection = sqlcon;
-        //        sqlcmd.CommandType = CommandType.StoredProcedure;
-
-        //        SqlParameter parci_actor = new SqlParameter();
-        //        parci_actor.ParameterName = "@id_reclu";
-        //        parci_actor.SqlDbType = SqlDbType.Int;
-        //        parci_actor.Value = objreclutamiento.Codi;
-        //        sqlcmd.Parameters.Add(parci_actor);
-
-        //        SqlParameter parnombre = new SqlParameter();
-        //        parnombre.ParameterName = "@nombre";
-        //        parnombre.SqlDbType = SqlDbType.VarChar;
-        //        parnombre.Size = 50;
-        //        parnombre.Value = objreclutamiento.Nombre;
-        //        sqlcmd.Parameters.Add(parnombre);
-
-        //        SqlParameter parapellido = new SqlParameter();
-        //        parapellido.ParameterName = "@apellido";
-        //        parapellido.SqlDbType = SqlDbType.VarChar;
-        //        parapellido.Size = 50;
-        //        parapellido.Value = objreclutamiento.Apellido;
-        //        sqlcmd.Parameters.Add(parapellido);
-
-        //        SqlParameter pardirec = new SqlParameter();
-        //        pardirec.ParameterName = "@direccion";
-        //        pardirec.SqlDbType = SqlDbType.VarChar;
-        //        pardirec.Size = 50;
-        //        pardirec.Value = objreclutamiento.Direccion;
-        //        sqlcmd.Parameters.Add(pardirec);
-
-        //        SqlParameter parci_ci = new SqlParameter();
-        //        parci_ci.ParameterName = "@ci";
-        //        parci_ci.SqlDbType = SqlDbType.Int;
-        //        parci_ci.Value = objreclutamiento.Ci;
-        //        sqlcmd.Parameters.Add(parci_ci);
+        public string editar(Dencuestador objencuestador)
+        {
+            string rpta = "";
 
-        //        SqlParameter ParFecha = new SqlParameter();
-        //        ParFecha.ParameterName = "@fecha_naci";
-        //        ParFecha.SqlDbType = SqlDbType.Date;
-        //        ParFecha.Value = objreclutamiento.Fecha_naci;
-        //        sqlcmd.Parameters.Add(ParFecha);
-
-        //        SqlParameter parnivel = new SqlParameter();
-        //        parnivel.ParameterName = "@nivel_acade";
-        //        parnivel.SqlDbType = SqlDbType.VarChar;
-        //        parnivel.Size = 50;
-        //        parnivel.Value = objreclutamiento.Nivel_acade;
-        //        sqlcmd.Parameters.Add(parnivel);
+            SqlConnection sqlcon = new SqlConnection();
 
-        //        SqlParameter parcelular = new SqlParameter();
-        //        parcelular.ParameterName = "@celular";
-        //        parcelular.SqlDbType = SqlDbType.Int;
-        //        parcelular.Value = objreclutamiento.Celular;
-        //        sqlcmd.Parameters.Add(parcelular);
+            try
+            {
+                sqlcon.ConnectionString = Conexion.Cn;
+                sqlcon.Open();
 
-        //        rpta = sqlcmd.ExecuteNonQuery() == 1 ? "ok" : "no se edito nada";
+                SqlCommand sqlcmd = new SqlCommand();
+                sqlcmd.CommandText = "speditar_encuestador";
+                sqlcmd.Connection = sqlcon;
+                sqlcmd.CommandType = CommandType.StoredProcedure;
 
+                SqlParameter parencuesta = new SqlParameter();
+                parencuesta.ParameterName = "@id_encuesta";
+                parencuesta.SqlDbType = SqlDbType.Int;
+                parencuesta.Value = objencuestador.Idencuesta;
+                sqlcmd.Parameters.Add(parencuesta);
 
-        //    }
-        //    catch (Exception ex)
-        //    {
+                SqlParameter parrecluta = new SqlParameter();
+                parrecluta.ParameterName = "@id_reclutamiento";
+                parrecluta.SqlDbType = SqlDbType.Int;
+                parrecluta.Value = objencuestador.Idreclutamiento;
+                sqlcmd.Parameters.Add(parrecluta);
 
-        //        return ex.Message;
-        //    }
+                SqlParameter parinstancia = new SqlParameter();
+                parinstancia.ParameterName = "@instancia";
+                parinstancia.SqlDbType = SqlDbType.VarChar;
+                parinstancia.Size = 50;
+                parinstancia.Value = objencuestador.Instancia;
+                sqlcmd.Parameters.Add(parinstancia);
 
-        //    finally
-        //    {
-        //        if (sqlcon.State == ConnectionState.Open) sqlcon.Close();
-        //    }
+                SqlParameter parbase = new SqlParameter();
+                parbase.ParameterName = "@basededatos";
+                parbase.SqlDbType = SqlDbType.VarChar;
+                parbase.Size = 50;
+                parbase.Value = objencuestador.Basededatos;
+                sqlcmd.Parameters.Add(parbase);
 
+                rpta = sqlcmd.ExecuteNonQuery() == 1 ? "ok" : "no se edito nada";
 
-        //    return rpta;
 
-        //}
+            }
+            catch (Exception ex)
+            {
 
-        //public string estado(Dreclutamiento objactor)
-        //{
-        //    string rpta = "";
-        //    SqlConnection sqlcon = new SqlConnection();
+                return ex.Message;
+            }
 
-        //    try
-        //    {
-        //        sqlcon.ConnectionString = Conexion.Cn;
-        //        sqlcon.Open();
+            finally
+            {
+                if (sqlcon.State == ConnectionState.Open) sqlcon.Close();
+            }
 
-        //        SqlCommand sqlcmd = new SqlCommand();
-        //        sqlcmd.CommandText = "spestado_reclutamiento";
-        //        sqlcmd.Connection = sqlcon;
-        //        sqlcmd.CommandType = CommandType.StoredProcedure;
 
-        //        SqlParameter parcod = new SqlParameter();
-        //        parcod.ParameterName = "id_reclu";
-        //        parcod.SqlDbType = SqlDbType.Int;
-        //        parcod.Value = objactor.Codi;
-        //        sqlcmd.Parameters.Add(parcod);
+            return rpta;
 
-        //        SqlParameter parestado = new SqlParameter();
-        //        parestado.ParameterName = "estado";
-        //        parestado.SqlDbType = SqlDbType.VarChar;
-        //        parestado.Size = 50;
-        //        parestado.Value = objactor.Estado;
-        //        sqlcmd.Parameters.Add(parestado);
+        }
 
-        //        rpta = sqlcmd.ExecuteNonQuery() == 1 ? "ok" : "No se edito";
+        public string estado(Dencuestador objactor)
+        {
+            string rpta = "";
+            SqlConnection sqlcon = new SqlConnection();
 
+            try
+            {
+                sqlcon.ConnectionString = Conexion.Cn;
+                sqlcon.Open();
 
+                SqlCommand sqlcmd = new SqlCommand();
+                sqlcmd.CommandText = "spestado_encuestador";
+                sqlcmd.Connection = sqlcon;
+                sqlcmd.CommandType = CommandType.StoredProcedure;
 
-        //    }
-        //    catch (Exception ex)
-        //    {
+                SqlParameter parcod = new SqlParameter();
+                parcod.ParameterName = "@id_encuestador";
+                parcod.SqlDbType = SqlDbType.Int;
+                parcod.Value = objactor.Idencuestador;
+                sqlcmd.Parameters.Add(parcod);
 
-        //        return ex.Message;
-        //    }
+                SqlParameter parestado = new SqlParameter();
+                parestado.ParameterName = "estado";
+                parestado.SqlDbType = SqlDbType.VarChar;
+                parestado.Size = 50;
+                parestado.Value = objactor.Estado;
+                sqlcmd.Parameters.Add(parestado);
 
-        //    return rpta;
+                rpta = sqlcmd.ExecuteNonQuery() == 1 ? "ok" : "No se edito";
 
-        //}
 
 
-        //public string eliminar(Dreclutamiento objactor)
-        //{
-        //    string rpta = "";
+            }
+            catch (Exception ex)
+            {
 
-        //    SqlConnection sqlcon = new SqlConnection();
+                return ex.Message;
+            }
 
-        //    try
-        //    {
-        //        sqlcon.ConnectionString = Conexion.Cn;
-        //        sqlcon.Open();
+            return rpta;
 
-        //        SqlCommand sqlcmd = new SqlCommand();
-        //        sqlcmd.CommandText = "speliminar_reclutamiento";
-        //        sqlcmd.Connection = sqlcon;
-        //        sqlcmd.CommandType = CommandType.StoredProcedure;
+        }
 
-        //        SqlParameter parciactor = new SqlParameter();
-        //        parciactor.ParameterName = "@id_reclu";
-        //        parciactor.SqlDbType = SqlDbType.Int;
-        //        parciactor.Value = objactor.Codi;
-        //        sqlcmd.Parameters.Add(parciactor);
 
+        public string eliminar(Dencuestador objactor)
+        {
+            string rpta = "";
 
+            SqlConnection sqlcon = new SqlConnection();
 
-        //        rpta = sqlcmd.ExecuteNonQuery() == 1 ? "ok" : "no se elimino nada";
+            try
+            {
+                sqlcon.ConnectionString = Conexion.Cn;
+                sqlcon.Open();
 
+                SqlCommand sqlcmd = new SqlCommand();
+                sqlcmd.CommandText = "speliminar_encuestador";
+                sqlcmd.Connection = sqlcon;
+                sqlcmd.CommandType = CommandType.StoredProcedure;
 
-        //    }
-        //    catch (Exception ex)
-        //    {
+                SqlParameter parciactor = new SqlParameter();
+                parciactor.ParameterName = "@id_encuestador";
+                parciactor.SqlDbType = SqlDbType.Int;
+                parciactor.Value = objactor.Idencuestador;
+                sqlcmd.Parameters.Add(parciactor);
 
-        //        return ex.Message;
-        //    }
 
-        //    finally
-        //    {
-        //        if (sqlcon.State == ConnectionState.Open) sqlcon.Close();
-        //    }
 
+                rpta = sqlcmd.ExecuteNonQuery() == 1 ? "ok" : "no se elimino nada";
 
-        //    return rpta;
 
-        //}
+            }
+            catch (Exception ex)
+            {
 
-        //public DataTable mostrar()
-        //{
-        //    DataTable dataresul = new DataTable("reclutamiento");
-        //    SqlConnection sqlcon = new SqlConnection();
+                return ex.Message;
+            }
 
-        //    try
-        //    {
-        //        sqlcon.ConnectionString = Conexion.Cn;
-        //        SqlCommand sqlcmd = new SqlCommand();
-        //        sqlcmd.CommandText = "spmostrar_reclutamiento";
-        //        sqlcmd.Connection = sqlcon;
-        //        sqlcmd.CommandType = CommandType.StoredProcedure;
+            finally
+            {
+                if (sqlcon.State == ConnectionState.Open) sqlcon.Close();
+            }
 
-        //        SqlDataAdapter datatabla = new SqlDataAdapter(sqlcmd);
-        //        datatabla.Fill(dataresul);
 
+            return rpta;
 
-        //    }
-        //    catch (Exception ex)
-        //    {
+        }
 
-        //        dataresul = null;
-        //    }
+        public DataTable mostrar()
+        {
+            DataTable dataresul = new DataTable("encuestador");
+            SqlConnection sqlcon = new SqlConnection();
 
-        //    return dataresul;
+            try
+            {
+                sqlcon.ConnectionString = Conexion.Cn;
+                SqlCommand sqlcmd = new SqlCommand();
+                sqlcmd.CommandText = "spmostrar_encuestador";
+                sqlcmd.Connection = sqlcon;
+                sqlcmd.CommandType = CommandType.StoredProcedure;
 
-        //}
+                SqlDataAdapter datatabla = new SqlDataAdapter(sqlcmd);
+                datatabla.Fill(dataresul);
 
-        //public int codiduplicado(Dreclutamiento objactor)
-        //{
-        //    int rpta = 0;
 
-        //    SqlConnection sqlcon = new SqlConnection();
-        //    try
-        //    {
-        //        sqlcon.ConnectionString = Conexion.Cn;
-        //        sqlcon.Open();
+            }
+            catch (Exception ex)
+            {
 
-        //        SqlCommand sqlcmd = new SqlCommand();
-        //        sqlcmd.CommandText = "spcodiduplicado_reclutamiento";
-        //        sqlcmd.Connection = sqlcon;
-        //        sqlcmd.CommandType = CommandType.StoredProcedure;
+                dataresul = null;
+            }
 
-        //        SqlParameter parduplicado = new SqlParameter();
-        //        parduplicado.ParameterName = "id_reclu";
-        //        parduplicado.SqlDbType = SqlDbType.Int;
-        //        parduplicado.Value = objactor.Codi;
-        //        sqlcmd.Parameters.Add(parduplicado);
-        //        //el parametro executescalar sirve para comparar de todos los registros contados y de vuelve una sola fila
-        //        rpta = Convert.ToInt32(sqlcmd.ExecuteScalar());
+            return dataresul;
 
-        //    }
-        //    catch (Exception)
-        //    {
+        }
 
+        public int codiduplicado(Dencuestador objactor)
+        {
+            int rpta = 0;
 
-        //    }
-        //    finally
-        //    {
-        //        if (sqlcon.State == ConnectionState.Open) sqlcon.Close();
-        //    }
+            SqlConnection sqlcon = new SqlConnection();
+            try
+            {
+                sqlcon.ConnectionString = Conexion.Cn;
+                sqlcon.Open();
 
-        //    return rpta;
-        //}
+                SqlCommand sqlcmd = new SqlCommand();
+                sqlcmd.CommandText = "spcodiduplicado_encuestador";
+                sqlcmd.Connection = sqlcon;
+                sqlcmd.CommandType = CommandType.StoredProcedure;
 
+                SqlParameter parduplicado = new SqlParameter();
+                parduplicado.ParameterName = "@id_encuestador";
+                parduplicado.SqlDbType = SqlDbType.Int;
+                parduplicado.Value = objactor.Idencuestador;
+                sqlcmd.Parameters.Add(parduplicado);
+                //el parametro executescalar sirve para comparar de todos los registros contados y de vuelve una sola fila
+                rpta = Convert.ToInt32(sqlcmd.ExecuteScalar());
 
-        //public DataTable estadostodos(Dreclutamiento objactor)
-        //{
-        //    DataTable datoscategoria = new DataTable("reclutamiento");
+            }
+            catch (Exception)
+            {
 
-        //    SqlConnection sqlcone = new SqlConnection();
 
-        //    try
-        //    {
-        //        sqlcone.ConnectionString = Conexion.Cn;
-        //        SqlCommand sqlcmd = new SqlCommand();
-        //        sqlcmd.Connection = sqlcone;
-        //        sqlcmd.CommandText = "spestadostodos_reclutamiento";
-        //        sqlcmd.CommandType = CommandType.StoredProcedure;
+            }
+            finally
+            {
+                if (sqlcon.State == ConnectionState.Open) sqlcon.Close();
+            }
 
-        //        SqlParameter parbuscar = new SqlParameter();
-        //        parbuscar.ParameterName = "@estado";
-        //        parbuscar.SqlDbType = SqlDbType.VarChar;
-        //        parbuscar.Value = objactor.Estado;
-        //        sqlcmd.Parameters.Add(parbuscar);
+            return rpta;
+        }
 
-        //        SqlDataAdapter sqldata = new SqlDataAdapter(sqlcmd);
-        //        sqldata.Fill(datoscategoria);
 
+        public DataTable estadostodos(Dreclutamiento objactor)
+        {
+            DataTable datoscategoria = new DataTable("encuestador");
 
-        //    }
-        //    catch (Exception)
-        //    {
+            SqlConnection sqlcone = new SqlConnection();
 
-        //        datoscategoria = null;
-        //    }
+            try
+            {
+                sqlcone.ConnectionString = Conexion.Cn;
+                SqlCommand sqlcmd = new SqlCommand();
+                sqlcmd.Connection = sqlcone;
+                sqlcmd.CommandText = "spestadostodos_encuestador";
+                sqlcmd.CommandType = CommandType.StoredProcedure;
 
-        //    return datoscategoria;
+                SqlParameter parbuscar = new SqlParameter();
+                parbuscar.ParameterName = "@estado";
+                parbuscar.SqlDbType = SqlDbType.VarChar;
+                parbuscar.Value = objactor.Estado;
+                sqlcmd.Parameters.Add(parbuscar);
 
-        //}
+                SqlDataAdapter sqldata = new SqlDataAdapter(sqlcmd);
+                sqldata.Fill(datoscategoria);
+
+
+            }
+            catch (Exception)
+            {
+
+                datoscategoria = null;
+            }
+
+            return datoscategoria;
+
+        }
     }
 }

@@ -67,14 +67,14 @@ namespace CapaDatos
                 SqlParameter parnombre = new SqlParameter();
                 parnombre.ParameterName = "@nombre";
                 parnombre.SqlDbType = SqlDbType.VarChar;
-                parnombre.Size = 50;
+                parnombre.Size = 500;
                 parnombre.Value = objcliente.nombre;
                 sqlcmd.Parameters.Add(parnombre);
 
                 SqlParameter partelefono = new SqlParameter();
                 partelefono.ParameterName = "@telefono";
-                partelefono.SqlDbType = SqlDbType.VarChar;
-                partelefono.Size = 50;
+                partelefono.SqlDbType = SqlDbType.Int;
+           
                 partelefono.Value = objcliente.telefono;
                 sqlcmd.Parameters.Add(partelefono);
 
