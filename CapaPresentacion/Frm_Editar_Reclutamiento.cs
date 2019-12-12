@@ -23,7 +23,7 @@ namespace CapaPresentacion
             string rpta = "";
             if (validar_formulario())
             {
-                int duplicad = Nencuesta.duplicado(Convert.ToInt32(textBox1.Text));
+                int duplicad = Nreclutamiento.duplicado(Convert.ToInt32(textBox1.Text));
                 if (duplicad > 0)
                 {
                     MessageBox.Show("Codigo duplicado");

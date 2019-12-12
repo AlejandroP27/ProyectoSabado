@@ -17,7 +17,7 @@ namespace ProyectoSabado
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frmencuestador());
+            Application.Run(new Frm_Principal());
         }
     }
 }

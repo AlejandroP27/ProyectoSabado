@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaNegocio;
 
 namespace CapaPresentacion
 {
@@ -31,7 +32,7 @@ namespace CapaPresentacion
                 Frm_Editar_Cliente frm = new Frm_Editar_Cliente();
 
 
-                frm.textBox1.Text = Convert.ToString(this.dataGridView1.CurrentRow.Cells["id_cliente"].Value);
+                frm.textBox1.Text = Convert.ToString(this.dataGridView1.CurrentRow.Cells["id_clien"].Value);
                 frm.textBox2.Text = this.dataGridView1.CurrentRow.Cells["nombre"].Value.ToString();
                 frm.textBox3.Text = this.dataGridView1.CurrentRow.Cells["telefono"].Value.ToString();
                 frm.textBox4.Text = this.dataGridView1.CurrentRow.Cells["direccion"].Value.ToString();
@@ -54,9 +55,9 @@ namespace CapaPresentacion
 
                 frm.cambioestado = Convert.ToString(this.dataGridView1.CurrentRow.Cells["estado"].Value);
 
-                frm.id = Convert.ToString(this.dataGridView1.CurrentRow.Cells["id_cliente"].Value);
+                frm.id = Convert.ToString(this.dataGridView1.CurrentRow.Cells["id_clien"].Value);
 
-                frm.textBox1.Text = Convert.ToString(this.dataGridView1.CurrentRow.Cells["id_cliente"].Value);
+                frm.textBox1.Text = Convert.ToString(this.dataGridView1.CurrentRow.Cells["id_clien"].Value);
                 frm.textBox2.Text = this.dataGridView1.CurrentRow.Cells["nombre"].Value.ToString();
                 frm.textBox3.Text = this.dataGridView1.CurrentRow.Cells["telefono"].Value.ToString();
                 frm.textBox4.Text = this.dataGridView1.CurrentRow.Cells["direccion"].Value.ToString();
@@ -78,7 +79,7 @@ namespace CapaPresentacion
                 Frm_Mostrar_Cliente frm = new Frm_Mostrar_Cliente();
 
 
-                frm.textBox1.Text = Convert.ToString(this.dataGridView1.CurrentRow.Cells["id_cliente"].Value);
+                frm.textBox1.Text = Convert.ToString(this.dataGridView1.CurrentRow.Cells["id_clien"].Value);
                 frm.textBox2.Text = this.dataGridView1.CurrentRow.Cells["nombre"].Value.ToString();
                 frm.textBox3.Text = this.dataGridView1.CurrentRow.Cells["telefono"].Value.ToString();
                 frm.textBox4.Text = this.dataGridView1.CurrentRow.Cells["direccion"].Value.ToString();
@@ -100,7 +101,7 @@ namespace CapaPresentacion
                 Frm_Eliminar_Cliente frm = new Frm_Eliminar_Cliente();
 
 
-                frm.textBox1.Text = Convert.ToString(this.dataGridView1.CurrentRow.Cells["id_reclu"].Value);
+                frm.textBox1.Text = Convert.ToString(this.dataGridView1.CurrentRow.Cells["id_clien"].Value);
                 frm.textBox2.Text = this.dataGridView1.CurrentRow.Cells["nombre"].Value.ToString();
                 frm.textBox3.Text = this.dataGridView1.CurrentRow.Cells["telefono"].Value.ToString();
                 frm.textBox4.Text = this.dataGridView1.CurrentRow.Cells["direccion"].Value.ToString();
@@ -111,6 +112,16 @@ namespace CapaPresentacion
             {
                 MessageBox.Show("Debe filtrar datos y selecionar!!!");
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.dataGridView1.DataSource = Ncliente.mostrar();
+        }
+
+        private void Frm_Principal_Cliente_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

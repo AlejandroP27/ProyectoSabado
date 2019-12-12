@@ -29,11 +29,11 @@ namespace CapaNegocio
 
         }
 
-        public static string editar(int id_encuesta, int id_cliente, string nombre, string descripcion, DateTime fecha_ini, DateTime fecha_fin)
+        public static string editar(int id_encuesta, int idcliente, string nombre, string descripcion, DateTime fecha_ini, DateTime fecha_fin)
         {
             Dencuesta obj = new Dencuesta();
             obj.Id_encuesta = id_encuesta;
-            obj.Idcliente = id_cliente;
+            obj.Idcliente = idcliente;
             obj.Nombre = nombre;
             obj.Descripcion = descripcion;
             obj.Fecha_ini = fecha_ini;

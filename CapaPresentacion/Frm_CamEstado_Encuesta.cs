@@ -11,30 +11,25 @@ using CapaNegocio;
 
 namespace CapaPresentacion
 {
-    public partial class Frm_CamEstado_Cliente : Form
+    public partial class Frm_CamEstado_Encuesta : Form
     {
         public string cambioestado = "";
         public string id = "";
 
-        public Frm_CamEstado_Cliente()
+        public Frm_CamEstado_Encuesta()
         {
             InitializeComponent();
         }
 
-        private void Frm_CamEstado_Cliente_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
-                string rpta = "";
+            string rpta = "";
             // en la tabla privilegio usamos el comando compareto() para comparar lo que contenia cambioestado... en este caso no 
             //necesitamos el comparador directamente usamos la comsulta if() para comprara cambioestado....
             if (cambioestado == "activo")
             {
                 cambioestado = "inactivo";
-                rpta = Ncliente.estado(Convert.ToInt32(id), cambioestado);
+                rpta = Nencuesta.estado(Convert.ToInt32(id), cambioestado);
                 MessageBox.Show("cambio de estado actualizado");
                 Close();
 
@@ -43,7 +38,7 @@ namespace CapaPresentacion
             else
             {
                 cambioestado = "activo";
-                rpta = Ncliente.estado(Convert.ToInt32(id), cambioestado);
+                rpta = Nencuesta.estado(Convert.ToInt32(id), cambioestado);
                 MessageBox.Show("cambio de estado actualizado");
                 Close();
             }
@@ -52,6 +47,11 @@ namespace CapaPresentacion
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Frm_CamEstado_Encuesta_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -11,7 +11,7 @@ using CapaNegocio;
 
 namespace CapaPresentacion
 {
-    public partial class FrmCliente : FrmBaseNuevo
+    public partial class FrmCliente : Form
     {
         public FrmCliente()
         {
@@ -22,36 +22,36 @@ namespace CapaPresentacion
         {
 
         }
-        public override void insertar()
-        {
+        //public override void insertar()
+        //{
 
-            string rpta = "";
-            if (validar_formulario())
-            {
-                int duplicad = Ncliente.duplicado(Convert.ToInt32(textBox1.Text));
-                if (duplicad > 0)
-                {
-                    MessageBox.Show("Codigo duplicado");
-                    textBox1.Focus();
-                }
+        //    string rpta = "";
+        //    if (validar_formulario())
+        //    {
+        //        int duplicad = Ncliente.duplicado(Convert.ToInt32(textBox1.Text));
+        //        if (duplicad > 0)
+        //        {
+        //            MessageBox.Show("Codigo duplicado");
+        //            textBox1.Focus();
+        //        }
 
-                else
-                {
-                    rpta = Ncliente.insertar(Convert.ToInt32(textBox1.Text), textBox2.Text.Trim().ToUpper(), textBox3.Text, textBox4.Text);
-                }
-
-
-
-                if (rpta.Equals("ok"))
-                {
-
-                    MessageBox.Show("se añadio exitosamente!");
-                    Close();
-                }
-            }
+        //        else
+        //        {
+        //            rpta = Ncliente.insertar(Convert.ToInt32(textBox1.Text), textBox2.Text.Trim().ToUpper(), textBox3.Text, textBox4.Text);
+        //        }
 
 
-        }
+
+        //        if (rpta.Equals("ok"))
+        //        {
+
+        //            MessageBox.Show("se añadio exitosamente!");
+        //            Close();
+        //        }
+        //    }
+
+
+        //}
         public bool validar_formulario()
         {
 
@@ -89,6 +89,27 @@ namespace CapaPresentacion
         private void label4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            string rpta = "";
+
+
+            rpta = Ncliente.insertar(Convert.ToInt32(textBox1.Text), textBox2.Text.Trim().ToUpper(), textBox3.Text.Trim().ToUpper(), textBox4.Text.Trim().ToUpper());
+
+
+
+            if (rpta.Equals("ok"))
+            {
+                MessageBox.Show("se añadio exitosamente!");
+                Close();
+            }
         }
     }
 }

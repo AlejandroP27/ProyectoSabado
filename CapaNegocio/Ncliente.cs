@@ -19,7 +19,6 @@ namespace CapaNegocio
             obj.nombre = nombre;
             obj.telefono = telefono;
             obj.direccion = direccion;
- 
             return obj.Insertar(obj);
 
         }
