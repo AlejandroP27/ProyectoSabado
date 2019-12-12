@@ -38,7 +38,7 @@ namespace CapaPresentacion
         private void mostrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Frm_Principal_Encuestador frm = new Frm_Principal_Encuestador();
-            frm.ShowDialog()
+            frm.ShowDialog();
         }
     }
 }
