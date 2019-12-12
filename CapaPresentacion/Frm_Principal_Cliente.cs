@@ -69,5 +69,48 @@ namespace CapaPresentacion
                 MessageBox.Show("Debe filtrar datos y selecionar!!!");
             }
         }
+
+        private void mostrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.RowCount > 0)
+            {
+
+                Frm_Mostrar_Cliente frm = new Frm_Mostrar_Cliente();
+
+
+                frm.textBox1.Text = Convert.ToString(this.dataGridView1.CurrentRow.Cells["id_cliente"].Value);
+                frm.textBox2.Text = this.dataGridView1.CurrentRow.Cells["nombre"].Value.ToString();
+                frm.textBox3.Text = this.dataGridView1.CurrentRow.Cells["telefono"].Value.ToString();
+                frm.textBox4.Text = this.dataGridView1.CurrentRow.Cells["direccion"].Value.ToString();
+
+
+                frm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Debe filtrar datos y selecionar!!!");
+            }
+        }
+
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.RowCount > 0)
+            {
+
+                Frm_Eliminar_Cliente frm = new Frm_Eliminar_Cliente();
+
+
+                frm.textBox1.Text = Convert.ToString(this.dataGridView1.CurrentRow.Cells["id_reclu"].Value);
+                frm.textBox2.Text = this.dataGridView1.CurrentRow.Cells["nombre"].Value.ToString();
+                frm.textBox3.Text = this.dataGridView1.CurrentRow.Cells["telefono"].Value.ToString();
+                frm.textBox4.Text = this.dataGridView1.CurrentRow.Cells["direccion"].Value.ToString();
+
+                frm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Debe filtrar datos y selecionar!!!");
+            }
+        }
     }
 }
