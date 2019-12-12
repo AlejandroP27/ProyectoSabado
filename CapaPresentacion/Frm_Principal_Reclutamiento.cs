@@ -159,5 +159,10 @@ namespace CapaPresentacion
                 MessageBox.Show("Debe filtrar datos y selecionar!!!");
             }
         }
+
+        private void Frm_Principal_Reclutamiento_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

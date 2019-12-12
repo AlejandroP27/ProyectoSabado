@@ -37,8 +37,7 @@ namespace CapaPresentacion
 
                 else
                 {
-                    rpta = Ncliente.insertar(Convert.ToInt32(textBox1.Text), textBox2.Text.Trim().ToUpper(), textBox3.Text, textBox4.Text,
-                        dateTimePicker1.Value, dateTimePicker2.Value);
+                    rpta = Ncliente.insertar(Convert.ToInt32(textBox1.Text), textBox2.Text.Trim().ToUpper(), textBox3.Text, textBox4.Text);
                 }
 
 

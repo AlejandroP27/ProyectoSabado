@@ -49,21 +49,18 @@
             // 
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Location = new System.Drawing.Point(29, 137);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Location = new System.Drawing.Point(22, 111);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(1139, 440);
+            this.groupBox1.Size = new System.Drawing.Size(854, 358);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(996, 43);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Location = new System.Drawing.Point(747, 35);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
+            this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
@@ -71,10 +68,9 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 110);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 89);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1128, 322);
+            this.dataGridView1.Size = new System.Drawing.Size(846, 262);
             this.dataGridView1.TabIndex = 1;
             // 
             // menuStrip1
@@ -88,8 +84,7 @@
             this.reporteToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1196, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(897, 24);
             this.menuStrip1.TabIndex = 8;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -98,13 +93,13 @@
             this.nuevoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nuevoToolStripMenuItem1});
             this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
-            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
+            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.nuevoToolStripMenuItem.Text = "Agregar";
             // 
             // nuevoToolStripMenuItem1
             // 
             this.nuevoToolStripMenuItem1.Name = "nuevoToolStripMenuItem1";
-            this.nuevoToolStripMenuItem1.Size = new System.Drawing.Size(127, 26);
+            this.nuevoToolStripMenuItem1.Size = new System.Drawing.Size(109, 22);
             this.nuevoToolStripMenuItem1.Text = "Nuevo";
             // 
             // modificarToolStripMenuItem
@@ -113,48 +108,50 @@
             this.editarToolStripMenuItem,
             this.cambioDeEstadoToolStripMenuItem});
             this.modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
-            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(85, 24);
+            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
             this.modificarToolStripMenuItem.Text = "Modificar";
             // 
             // editarToolStripMenuItem
             // 
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(206, 26);
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.editarToolStripMenuItem.Text = "Editar";
             // 
             // cambioDeEstadoToolStripMenuItem
             // 
             this.cambioDeEstadoToolStripMenuItem.Name = "cambioDeEstadoToolStripMenuItem";
-            this.cambioDeEstadoToolStripMenuItem.Size = new System.Drawing.Size(206, 26);
+            this.cambioDeEstadoToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.cambioDeEstadoToolStripMenuItem.Text = "Cambio de estado";
             // 
             // mostrarToolStripMenuItem
             // 
             this.mostrarToolStripMenuItem.Name = "mostrarToolStripMenuItem";
-            this.mostrarToolStripMenuItem.Size = new System.Drawing.Size(72, 24);
+            this.mostrarToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.mostrarToolStripMenuItem.Text = "Mostrar";
             // 
             // eliminarToolStripMenuItem
             // 
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.eliminarToolStripMenuItem.Text = "Eliminar";
             // 
             // reporteToolStripMenuItem
             // 
             this.reporteToolStripMenuItem.Name = "reporteToolStripMenuItem";
-            this.reporteToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
+            this.reporteToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.reporteToolStripMenuItem.Text = "Reporte";
             // 
             // Frm_Principal_Encuestador
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1196, 604);
+            this.ClientSize = new System.Drawing.Size(897, 491);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Frm_Principal_Encuestador";
             this.Text = "Frm_Principal_Encuestador";
+            this.Load += new System.EventHandler(this.Frm_Principal_Encuestador_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
