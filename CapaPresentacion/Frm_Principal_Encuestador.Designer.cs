@@ -62,7 +62,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
+            this.button1.Text = "Listar";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
@@ -148,7 +148,7 @@
             this.ClientSize = new System.Drawing.Size(897, 491);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Frm_Principal_Encuestador";
             this.Text = "Frm_Principal_Encuestador";
             this.Load += new System.EventHandler(this.Frm_Principal_Encuestador_Load);

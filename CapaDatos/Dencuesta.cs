@@ -220,14 +220,14 @@ namespace CapaDatos
                 SqlParameter parcod = new SqlParameter();
                 parcod.ParameterName = "id_encuesta";
                 parcod.SqlDbType = SqlDbType.Int;
-                parcod.Value = objencuesta.Id_encuesta;
+                parcod.Value = objencuesta._id_encuesta;
                 sqlcmd.Parameters.Add(parcod);
 
                 SqlParameter parestado = new SqlParameter();
                 parestado.ParameterName = "estado";
                 parestado.SqlDbType = SqlDbType.VarChar;
                 parestado.Size = 50;
-                parestado.Value = objencuesta.Estado;
+                parestado.Value = objencuesta._estado;
                 sqlcmd.Parameters.Add(parestado);
 
                 rpta = sqlcmd.ExecuteNonQuery() == 1 ? "ok" : "No se edito";
