@@ -62,6 +62,11 @@ namespace CapaNegocio
             return new Dencuestador().mostrar();
         }
 
+        public static DataTable mostrar_solo_pregunta()
+        {
+            return new Dencuestador().mostrar_solo_pregunta();
+        }
+
 
         //public static DataTable buscarnombre(string txtbuscar)
         //{

@@ -330,6 +330,35 @@ namespace CapaDatos
         }
 
 
+        public DataTable mostrar_solo_pregunta()
+        {
+            DataTable dataresul = new DataTable("pregunta");
+            SqlConnection sqlcon = new SqlConnection();
+
+            try
+            {
+                sqlcon.ConnectionString = Conexion.Cn;
+                SqlCommand sqlcmd = new SqlCommand();
+                sqlcmd.CommandText = "spmostrar_solo_pregunta";
+                sqlcmd.Connection = sqlcon;
+                sqlcmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter datatabla = new SqlDataAdapter(sqlcmd);
+                datatabla.Fill(dataresul);
+
+
+            }
+            catch (Exception ex)
+            {
+
+                dataresul = null;
+            }
+
+            return dataresul;
+
+        }
+
+
         public DataTable estadostodos(Dreclutamiento objactor)
         {
             DataTable datoscategoria = new DataTable("encuestador");
