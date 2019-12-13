@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,11 @@ namespace CapaNegocio
 
             return obj.insertar(obj);
 
+        }
+
+        public static DataTable mostrar()
+        {
+            return new Drespuesta().mostrar();
         }
     }
 }

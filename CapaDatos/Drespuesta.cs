@@ -149,6 +149,34 @@ namespace CapaDatos
 
         }
 
+        public DataTable mostrar()
+        {
+            DataTable dataresul = new DataTable("respuesta");
+            SqlConnection sqlcon = new SqlConnection();
+
+            try
+            {
+                sqlcon.ConnectionString = Conexion.Cn;
+                SqlCommand sqlcmd = new SqlCommand();
+                sqlcmd.CommandText = "spmostrar_respuesta";
+                sqlcmd.Connection = sqlcon;
+                sqlcmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter datatabla = new SqlDataAdapter(sqlcmd);
+                datatabla.Fill(dataresul);
+
+
+            }
+            catch (Exception ex)
+            {
+
+                dataresul = null;
+            }
+
+            return dataresul;
+
+        }
+
 
 
 
