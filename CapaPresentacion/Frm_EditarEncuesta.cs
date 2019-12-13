@@ -11,9 +11,9 @@ using CapaNegocio;
 
 namespace CapaPresentacion
 {
-    public partial class Frm_Editar_Reclutamiento : Form
+    public partial class Frm_EditarEncuesta : Form
     {
-        public Frm_Editar_Reclutamiento()
+        public Frm_EditarEncuesta()
         {
             InitializeComponent();
         }
@@ -23,16 +23,16 @@ namespace CapaPresentacion
             string rpta = "";
             if (validar_formulario())
             {
-                int duplicad = Nreclutamiento.duplicado(Convert.ToInt32(textBox1.Text));
+                int duplicad = Nencuesta.duplicado(Convert.ToInt32(txtIdEncues.Text));
                 if (duplicad > 0)
                 {
                     MessageBox.Show("Codigo duplicado");
-                    textBox1.Focus();
+                    txtNombre.Focus();
                 }
 
                 else
                 {
-                    rpta = Nreclutamiento.editar(Convert.ToInt32(textBox1.Text), textBox2.Text.Trim().ToUpper(), textBox3.Text.Trim().ToUpper(), textBox4.Text.Trim().ToUpper(), Convert.ToInt32(textBox5.Text), dateTimePicker1.Value, textBox6.Text.Trim().ToUpper(), Convert.ToInt32(textBox7.Text));
+                    rpta = Nencuesta.editar(Convert.ToInt32(txtIdEncues.Text), Convert.ToInt32(txtcliente.Text), txtNombre.Text.Trim().ToUpper(), txtDescrip.Text.Trim().ToUpper(), dtpFechaini.Value, dtpFechafin.Value);
                 }
 
 
@@ -40,32 +40,37 @@ namespace CapaPresentacion
                 if (rpta.Equals("ok"))
                 {
 
-                    MessageBox.Show("se añadio exitosamente!");
+                    MessageBox.Show("se modifico exitosamente!");
                     Close();
                 }
             }
         }
 
-        private void Frm_Editar_Reclutamiento_Load(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
         public bool validar_formulario()
         {
 
 
-            if (textBox1.Text.Trim().Length < 1)
+            if (txtIdEncues.Text.Trim().Length < 1)
             {
                 MessageBox.Show("Ingrese el Codigo ");
                 return false;
             }
-            if (textBox2.Text.Trim().Length < 1)
+            if (txtNombre.Text.Trim().Length < 1)
             {
                 MessageBox.Show("Ingrese el Descripcion");
                 return false;
             }
 
             return true;
+
+        }
+
+        private void Frm_EditarEncuesta_Load(object sender, EventArgs e)
+        {
 
         }
     }

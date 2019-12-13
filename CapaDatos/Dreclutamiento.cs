@@ -12,7 +12,7 @@ namespace CapaDatos
 {
    public class Dreclutamiento
     {
-        private int _codi;
+        private int _id_reclu;
         private string _nombre;
         private string _apellido;
         private string _direccion;
@@ -23,7 +23,7 @@ namespace CapaDatos
         private DateTime _fecha_crea;
         private string _estado;
 
-        public int Codi { get => _codi; set => _codi = value; }
+        public int Id_reclu { get => _id_reclu; set => _id_reclu = value; }
         public string Nombre { get => _nombre; set => _nombre = value; }
         public string Apellido { get => _apellido; set => _apellido = value; }
         public string Direccion { get => _direccion; set => _direccion = value; }
@@ -36,7 +36,7 @@ namespace CapaDatos
 
         public Dreclutamiento(int idreclu, string nombre, string apellido, string direccion, int ci, DateTime fecha_naci, string nivel_acade, int celular, DateTime fecha_crea, string estado)
         {
-            this.Codi = idreclu;
+            this.Id_reclu = idreclu;
             this.Nombre = nombre;
             this.Apellido = apellido;
             this.Direccion = direccion;
@@ -73,7 +73,7 @@ namespace CapaDatos
                 SqlParameter parci_actor = new SqlParameter();
                 parci_actor.ParameterName = "@id_reclu";
                 parci_actor.SqlDbType = SqlDbType.Int;
-                parci_actor.Value = objreclutamiento.Codi;
+                parci_actor.Value = objreclutamiento.Id_reclu;
                 sqlcmd.Parameters.Add(parci_actor);
 
                 SqlParameter parnombre = new SqlParameter();
@@ -122,12 +122,7 @@ namespace CapaDatos
                 parcelular.Value = objreclutamiento.Celular;
                 sqlcmd.Parameters.Add(parcelular);
 
-                SqlParameter parfechacrea = new SqlParameter();
-                parfechacrea.ParameterName = "@fecha_crea";
-                parfechacrea.SqlDbType = SqlDbType.DateTime;
-                parfechacrea.Value = objreclutamiento.Fecha_crea;
-                sqlcmd.Parameters.Add(parfechacrea);
-
+     
 
                 rpta = sqlcmd.ExecuteNonQuery() == 1 ? "ok" : "no se inserto nada";
 
@@ -170,7 +165,7 @@ namespace CapaDatos
                 SqlParameter parci_actor = new SqlParameter();
                 parci_actor.ParameterName = "@id_reclu";
                 parci_actor.SqlDbType = SqlDbType.Int;
-                parci_actor.Value = objreclutamiento.Codi;
+                parci_actor.Value = objreclutamiento.Id_reclu;
                 sqlcmd.Parameters.Add(parci_actor);
 
                 SqlParameter parnombre = new SqlParameter();
@@ -257,7 +252,7 @@ namespace CapaDatos
                 SqlParameter parcod = new SqlParameter();
                 parcod.ParameterName = "id_reclu";
                 parcod.SqlDbType = SqlDbType.Int;
-                parcod.Value = objactor.Codi;
+                parcod.Value = objactor.Id_reclu;
                 sqlcmd.Parameters.Add(parcod);
 
                 SqlParameter parestado = new SqlParameter();
@@ -302,7 +297,7 @@ namespace CapaDatos
                 SqlParameter parciactor = new SqlParameter();
                 parciactor.ParameterName = "@id_reclu";
                 parciactor.SqlDbType = SqlDbType.Int;
-                parciactor.Value = objactor.Codi;
+                parciactor.Value = objactor.Id_reclu;
                 sqlcmd.Parameters.Add(parciactor);
 
 
@@ -373,7 +368,7 @@ namespace CapaDatos
                 SqlParameter parduplicado = new SqlParameter();
                 parduplicado.ParameterName = "id_reclu";
                 parduplicado.SqlDbType = SqlDbType.Int;
-                parduplicado.Value = objactor.Codi;
+                parduplicado.Value = objactor.Id_reclu;
                 sqlcmd.Parameters.Add(parduplicado);
                 //el parametro executescalar sirve para comparar de todos los registros contados y de vuelve una sola fila
                 rpta = Convert.ToInt32(sqlcmd.ExecuteScalar());

@@ -10,36 +10,33 @@ namespace CapaDatos
 {
     public class Dencuesta
     {
-        private int _idencuesta;
-        private int _id_cliente;
+        private int _id_encuesta;
+        private int _idcliente;
         private string _nombre;
         private string descripcion;
         private DateTime _fecha_ini;
         private DateTime _fecha_fin;
         private DateTime _fecha_crea;
-        private DateTime _fecha_sinc;
         private string _estado;
 
-        public int Idencuesta { get => _idencuesta; set => _idencuesta = value; }
-        public int Id_cliente { get => _id_cliente; set => _id_cliente = value; }
+        public int Id_encuesta { get => _id_encuesta; set => _id_encuesta = value; }
+        public int Idcliente { get => _idcliente; set => _idcliente = value; }
         public string Nombre { get => _nombre; set => _nombre = value; }
         public string Descripcion { get => descripcion; set => descripcion = value; }
         public DateTime Fecha_ini { get => _fecha_ini; set => _fecha_ini = value; }
         public DateTime Fecha_fin { get => _fecha_fin; set => _fecha_fin = value; }
         public DateTime Fecha_crea { get => _fecha_crea; set => _fecha_crea = value; }
-        public DateTime Fecha_sinc { get => _fecha_sinc; set => _fecha_sinc = value; }
         public string Estado { get => _estado; set => _estado = value; }
 
-        public Dencuesta(int idencuesta, int id_cliente, string nombre, string descripcion, DateTime fecha_ini, DateTime fecha_fin, DateTime fecha_crea, DateTime fecha_sinc, string estado)
+        public Dencuesta(int id_encuesta, int idcliente, string nombre, string descripcion, DateTime fecha_ini, DateTime fecha_fin, DateTime fecha_crea, DateTime fecha_sinc, string estado)
         {
-            this.Idencuesta = idencuesta;
-            this.Id_cliente = id_cliente;
+            this.Id_encuesta = id_encuesta;
+            this.Idcliente = idcliente;
             this.Nombre = nombre;
             this.Descripcion = descripcion;
             this.Fecha_ini = fecha_ini;
             this.Fecha_fin = fecha_fin;
             this.Fecha_crea = fecha_crea;
-            this.Fecha_sinc = fecha_sinc;
             this.Estado = estado;
         }
 
@@ -66,13 +63,13 @@ namespace CapaDatos
                 SqlParameter parci_encuesta = new SqlParameter();
                 parci_encuesta.ParameterName = "@id_encuesta";
                 parci_encuesta.SqlDbType = SqlDbType.Int;
-                parci_encuesta.Value = objencuesta.Idencuesta;
+                parci_encuesta.Value = objencuesta.Id_encuesta;
                 sqlcmd.Parameters.Add(parci_encuesta);
 
                 SqlParameter parci_encuestaa = new SqlParameter();
                 parci_encuestaa.ParameterName = "@idcliente";
                 parci_encuestaa.SqlDbType = SqlDbType.Int;
-                parci_encuestaa.Value = objencuesta.Id_cliente;
+                parci_encuestaa.Value = objencuesta.Idcliente;
                 sqlcmd.Parameters.Add(parci_encuestaa);
 
                 SqlParameter parnombre = new SqlParameter();
@@ -82,36 +79,26 @@ namespace CapaDatos
                 parnombre.Value = objencuesta.Nombre;
                 sqlcmd.Parameters.Add(parnombre);
 
-                SqlParameter partelefono = new SqlParameter();
-                partelefono.ParameterName = "@descripcion";
-                partelefono.SqlDbType = SqlDbType.VarChar;
-                partelefono.Size = 150;
-                partelefono.Value = objencuesta.descripcion;
-                sqlcmd.Parameters.Add(partelefono);
+                SqlParameter pardes = new SqlParameter();
+                pardes.ParameterName = "@descripcion";
+                pardes.SqlDbType = SqlDbType.VarChar;
+                pardes.Size = 50;
+                pardes.Value = objencuesta.Descripcion;
+                sqlcmd.Parameters.Add(pardes);
 
                 SqlParameter ParFechac = new SqlParameter();
                 ParFechac.ParameterName = "@fecha_ini";
-                ParFechac.SqlDbType = SqlDbType.Date;
+                ParFechac.SqlDbType = SqlDbType.DateTime;
                 ParFechac.Value = objencuesta.Fecha_ini;
                 sqlcmd.Parameters.Add(ParFechac);
 
                 SqlParameter ParFechacfin = new SqlParameter();
                 ParFechacfin.ParameterName = "@fecha_fin";
-                ParFechacfin.SqlDbType = SqlDbType.Date;
+                ParFechacfin.SqlDbType = SqlDbType.DateTime;
                 ParFechacfin.Value = objencuesta.Fecha_fin;
                 sqlcmd.Parameters.Add(ParFechacfin);
 
-                SqlParameter ParFechacre = new SqlParameter();
-                ParFechacre.ParameterName = "@fecha_crea";
-                ParFechacre.SqlDbType = SqlDbType.Date;
-                ParFechacre.Value = objencuesta.Fecha_crea;
-                sqlcmd.Parameters.Add(ParFechacre);
-
-                SqlParameter ParFechas = new SqlParameter();
-                ParFechas.ParameterName = "@fecha_sinc";
-                ParFechas.SqlDbType = SqlDbType.Date;
-                ParFechas.Value = objencuesta.Fecha_sinc;
-                sqlcmd.Parameters.Add(ParFechas);
+          
 
 
                 rpta = sqlcmd.ExecuteNonQuery() == 1 ? "ok" : "no se inserto nada";
@@ -155,13 +142,13 @@ namespace CapaDatos
                 SqlParameter parci_encuesta = new SqlParameter();
                 parci_encuesta.ParameterName = "@id_encuesta";
                 parci_encuesta.SqlDbType = SqlDbType.Int;
-                parci_encuesta.Value = objencuesta.Idencuesta;
+                parci_encuesta.Value = objencuesta.Id_encuesta;
                 sqlcmd.Parameters.Add(parci_encuesta);
 
                 SqlParameter parci_encuestaa = new SqlParameter();
                 parci_encuestaa.ParameterName = "@id_cliente";
                 parci_encuestaa.SqlDbType = SqlDbType.Int;
-                parci_encuestaa.Value = objencuesta.Id_cliente;
+                parci_encuestaa.Value = objencuesta.Idcliente;
                 sqlcmd.Parameters.Add(parci_encuestaa);
 
                 SqlParameter parnombre = new SqlParameter();
@@ -190,17 +177,8 @@ namespace CapaDatos
                 ParFechac.Value = objencuesta.Fecha_fin;
                 sqlcmd.Parameters.Add(ParFechac);
 
-                SqlParameter ParFechacre = new SqlParameter();
-                ParFechac.ParameterName = "@fecha_crea";
-                ParFechac.SqlDbType = SqlDbType.Date;
-                ParFechac.Value = objencuesta.Fecha_crea;
-                sqlcmd.Parameters.Add(ParFechac);
+        
 
-                SqlParameter ParFechas = new SqlParameter();
-                ParFechas.ParameterName = "@fecha_sinc";
-                ParFechas.SqlDbType = SqlDbType.Date;
-                ParFechas.Value = objencuesta.Fecha_sinc;
-                sqlcmd.Parameters.Add(ParFechas);
 
 
 
@@ -242,7 +220,7 @@ namespace CapaDatos
                 SqlParameter parcod = new SqlParameter();
                 parcod.ParameterName = "id_encuesta";
                 parcod.SqlDbType = SqlDbType.Int;
-                parcod.Value = objencuesta.Idencuesta;
+                parcod.Value = objencuesta.Id_encuesta;
                 sqlcmd.Parameters.Add(parcod);
 
                 SqlParameter parestado = new SqlParameter();
@@ -287,7 +265,7 @@ namespace CapaDatos
                 SqlParameter parciactor = new SqlParameter();
                 parciactor.ParameterName = "@id_encuesta";
                 parciactor.SqlDbType = SqlDbType.Int;
-                parciactor.Value = objencuesta.Idencuesta;
+                parciactor.Value = objencuesta.Id_encuesta;
                 sqlcmd.Parameters.Add(parciactor);
 
 
@@ -358,7 +336,7 @@ namespace CapaDatos
                 SqlParameter parduplicado = new SqlParameter();
                 parduplicado.ParameterName = "id_encuesta";
                 parduplicado.SqlDbType = SqlDbType.Int;
-                parduplicado.Value = objencuesta.Idencuesta;
+                parduplicado.Value = objencuesta.Id_encuesta;
                 sqlcmd.Parameters.Add(parduplicado);
                 //el parametro executescalar sirve para comparar de todos los registros contados y de vuelve una sola fila
                 rpta = Convert.ToInt32(sqlcmd.ExecuteScalar());

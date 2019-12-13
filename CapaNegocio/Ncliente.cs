@@ -12,29 +12,25 @@ namespace CapaNegocio
     {
 
 
-        public static string insertar(int id_clien, string nombre, string telefono, string direccion, DateTime fecha_crea, DateTime fecha_sinc)
+        public static string insertar(int id_clien, string nombre, string telefono, string direccion)
         {
             Dcliente obj = new Dcliente();
             obj.id_clien = id_clien;
             obj.nombre = nombre;
             obj.telefono = telefono;
             obj.direccion = direccion;
-            obj.fecha_crea = fecha_crea;
-            obj.fecha_sinc = fecha_sinc;
-
             return obj.Insertar(obj);
 
         }
 
-        public static string editar(int id_clien, string nombre, string telefono, string direccion, DateTime fecha_crea, DateTime fecha_sinc)
+        public static string editar(int id_clien, string nombre, string telefono, string direccion)
         {
             Dcliente obj = new Dcliente();
             obj.id_clien = id_clien;
             obj.nombre = nombre;
             obj.telefono = telefono;
             obj.direccion = direccion;
-            obj.fecha_crea = fecha_crea;
-            obj.fecha_sinc = fecha_sinc;
+
 
             return obj.editar(obj);
 

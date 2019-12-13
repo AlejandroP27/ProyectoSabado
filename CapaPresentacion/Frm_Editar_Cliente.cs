@@ -11,9 +11,9 @@ using CapaNegocio;
 
 namespace CapaPresentacion
 {
-    public partial class Frm_Editar_Reclutamiento : Form
+    public partial class Frm_Editar_Cliente : Form
     {
-        public Frm_Editar_Reclutamiento()
+        public Frm_Editar_Cliente()
         {
             InitializeComponent();
         }
@@ -23,7 +23,7 @@ namespace CapaPresentacion
             string rpta = "";
             if (validar_formulario())
             {
-                int duplicad = Nreclutamiento.duplicado(Convert.ToInt32(textBox1.Text));
+                int duplicad = Ncliente.duplicado(Convert.ToInt32(textBox1.Text));
                 if (duplicad > 0)
                 {
                     MessageBox.Show("Codigo duplicado");
@@ -32,7 +32,7 @@ namespace CapaPresentacion
 
                 else
                 {
-                    rpta = Nreclutamiento.editar(Convert.ToInt32(textBox1.Text), textBox2.Text.Trim().ToUpper(), textBox3.Text.Trim().ToUpper(), textBox4.Text.Trim().ToUpper(), Convert.ToInt32(textBox5.Text), dateTimePicker1.Value, textBox6.Text.Trim().ToUpper(), Convert.ToInt32(textBox7.Text));
+                    rpta = Ncliente.editar(Convert.ToInt32(textBox1.Text), textBox2.Text.Trim().ToUpper(), textBox3.Text.Trim().ToUpper(), textBox4.Text.Trim().ToUpper());
                 }
 
 
@@ -40,15 +40,10 @@ namespace CapaPresentacion
                 if (rpta.Equals("ok"))
                 {
 
-                    MessageBox.Show("se añadio exitosamente!");
+                    MessageBox.Show("se modifico exitosamente!");
                     Close();
                 }
             }
-        }
-
-        private void Frm_Editar_Reclutamiento_Load(object sender, EventArgs e)
-        {
-
         }
         public bool validar_formulario()
         {
@@ -67,6 +62,11 @@ namespace CapaPresentacion
 
             return true;
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

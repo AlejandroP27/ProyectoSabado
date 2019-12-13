@@ -26,12 +26,12 @@ namespace CapaPresentacion
         private void button1_Click(object sender, EventArgs e)
         {
             string rpta = "";
-            // en la tabla privilegio usamos el comando compareto() para comparar lo que contenia cambioestado... en este caso no 
+            // en la tabla privilegio usamos el comando con parametro() para comparar lo que contenia cambioestado... en este caso no 
             //necesitamos el comparador directamente usamos la comsulta if() para comprara cambioestado....
             
                 
                 rpta = Nreclutamiento.eliminar(Convert.ToInt32(textBox1.Text));
-                MessageBox.Show("cambio de estado actualizado");
+                MessageBox.Show("Se elimino correctamente");
                 Close();
 
          

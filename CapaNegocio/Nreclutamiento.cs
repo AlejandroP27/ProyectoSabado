@@ -11,10 +11,10 @@ namespace CapaNegocio
     public class Nreclutamiento
     {
 
-        public static string insertar(int codi, string nombre, string apellido, string direccion, int ci, DateTime fecha_naci, string nivel_acade, int celular, DateTime fecha_crea)
+        public static string insertar(int id_reclu, string nombre, string apellido, string direccion, int ci, DateTime fecha_naci, string nivel_acade, int celular)
         {
             Dreclutamiento obj = new Dreclutamiento();
-            obj.Codi = codi;
+            obj.Id_reclu = id_reclu;
             obj.Nombre = nombre;
             obj.Apellido = apellido;
             obj.Direccion = direccion;
@@ -22,7 +22,7 @@ namespace CapaNegocio
             obj.Fecha_naci = fecha_naci;
             obj.Nivel_acade = nivel_acade;
             obj.Celular = celular;
-            obj.Fecha_crea = fecha_crea;
+
 
             return obj.insertar(obj);
 
@@ -31,7 +31,7 @@ namespace CapaNegocio
         public static string editar(int id_reclu, string nombre, string apellido, string direccion, int ci, DateTime fecha_naci, string nivel_acade, int celular)
         {
             Dreclutamiento obj = new Dreclutamiento();
-            obj.Codi = id_reclu;
+            obj.Id_reclu = id_reclu;
             obj.Nombre = nombre;
             obj.Apellido = apellido;
             obj.Direccion = direccion;
@@ -48,7 +48,7 @@ namespace CapaNegocio
         {
 
             Dreclutamiento obj = new Dreclutamiento();
-            obj.Codi = id_reclu;
+            obj.Id_reclu = id_reclu;
             return obj.eliminar(obj);
 
         }
@@ -57,7 +57,7 @@ namespace CapaNegocio
         {
             Dreclutamiento obj = new Dreclutamiento();
 
-            obj.Codi = id_reclu;
+            obj.Id_reclu = id_reclu;
             obj.Estado = estado;
 
             return obj.estado(obj);
@@ -82,7 +82,7 @@ namespace CapaNegocio
         {
             Dreclutamiento obj = new Dreclutamiento();
 
-            obj.Codi = id_reclu;
+            obj.Id_reclu = id_reclu;
             return obj.codiduplicado(obj);
         }
 

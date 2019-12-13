@@ -100,11 +100,35 @@
     <Compile Include="FrmReclutamiento.Designer.cs">
       <DependentUpon>FrmReclutamiento.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_CamEstado_Cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_CamEstado_Cliente.Designer.cs">
+      <DependentUpon>Frm_CamEstado_Cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_CamEstado_Encuesta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_CamEstado_Encuesta.Designer.cs">
+      <DependentUpon>Frm_CamEstado_Encuesta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_CamEsta_recluta.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm_CamEsta_recluta.Designer.cs">
       <DependentUpon>Frm_CamEsta_recluta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_EditarEncuesta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_EditarEncuesta.Designer.cs">
+      <DependentUpon>Frm_EditarEncuesta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Editar_Cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Editar_Cliente.Designer.cs">
+      <DependentUpon>Frm_Editar_Cliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_Editar_Reclutamiento.cs">
       <SubType>Form</SubType>
@@ -112,11 +136,29 @@
     <Compile Include="Frm_Editar_Reclutamiento.Designer.cs">
       <DependentUpon>Frm_Editar_Reclutamiento.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_Eliminar_Cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Eliminar_Cliente.Designer.cs">
+      <DependentUpon>Frm_Eliminar_Cliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Eliminar_Recluta.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm_Eliminar_Recluta.Designer.cs">
       <DependentUpon>Frm_Eliminar_Recluta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_MostrarEncuesta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_MostrarEncuesta.Designer.cs">
+      <DependentUpon>Frm_MostrarEncuesta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Mostrar_Cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Mostrar_Cliente.Designer.cs">
+      <DependentUpon>Frm_Mostrar_Cliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_Mostrar_Recluta.cs">
       <SubType>Form</SubType>
@@ -129,6 +171,30 @@
     </Compile>
     <Compile Include="Frm_Principal.Designer.cs">
       <DependentUpon>Frm_Principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Principal_Encuesta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Principal_Encuesta.Designer.cs">
+      <DependentUpon>Frm_Principal_Encuesta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Principal_Encuestador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Principal_Encuestador.Designer.cs">
+      <DependentUpon>Frm_Principal_Encuestador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Principal_Reclutamiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Principal_Reclutamiento.Designer.cs">
+      <DependentUpon>Frm_Principal_Reclutamiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Principal_Cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Principal_Cliente.Designer.cs">
+      <DependentUpon>Frm_Principal_Cliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -156,20 +222,53 @@
     <EmbeddedResource Include="FrmReclutamiento.resx">
       <DependentUpon>FrmReclutamiento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_CamEstado_Cliente.resx">
+      <DependentUpon>Frm_CamEstado_Cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_CamEstado_Encuesta.resx">
+      <DependentUpon>Frm_CamEstado_Encuesta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_CamEsta_recluta.resx">
       <DependentUpon>Frm_CamEsta_recluta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_EditarEncuesta.resx">
+      <DependentUpon>Frm_EditarEncuesta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Editar_Cliente.resx">
+      <DependentUpon>Frm_Editar_Cliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Editar_Reclutamiento.resx">
       <DependentUpon>Frm_Editar_Reclutamiento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Eliminar_Cliente.resx">
+      <DependentUpon>Frm_Eliminar_Cliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Eliminar_Recluta.resx">
       <DependentUpon>Frm_Eliminar_Recluta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Mostrarencuesta.resx">
+      <DependentUpon>Frm_MostrarEncuesta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Mostrar_Cliente.resx">
+      <DependentUpon>Frm_Mostrar_Cliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Mostrar_Recluta.resx">
       <DependentUpon>Frm_Mostrar_Recluta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Principal.resx">
       <DependentUpon>Frm_Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Principal_Encuesta.resx">
+      <DependentUpon>Frm_Principal_Encuesta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Principal_Encuestador.resx">
+      <DependentUpon>Frm_Principal_Encuestador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Principal_Reclutamiento.resx">
+      <DependentUpon>Frm_Principal_Reclutamiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Principal_Cliente.resx">
+      <DependentUpon>Frm_Principal_Cliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
