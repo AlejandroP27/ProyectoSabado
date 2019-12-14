@@ -177,6 +177,61 @@ namespace CapaDatos
 
         }
 
+        public DataTable mostrarpregunta()
+        {
+            DataTable dataresul = new DataTable("pregunta");
+            SqlConnection sqlcon = new SqlConnection();
+
+            try
+            {
+                sqlcon.ConnectionString = Conexion.Cn;
+                SqlCommand sqlcmd = new SqlCommand();
+                sqlcmd.CommandText = "spmostrar_pregunta";
+                sqlcmd.Connection = sqlcon;
+                sqlcmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter datatabla = new SqlDataAdapter(sqlcmd);
+                datatabla.Fill(dataresul);
+
+
+            }
+            catch (Exception ex)
+            {
+
+                dataresul = null;
+            }
+
+            return dataresul;
+
+        }
+
+        public DataTable mostrarsincronizar()
+        {
+            DataTable dataresul = new DataTable("pregunta");
+            SqlConnection sqlcon = new SqlConnection();
+
+            try
+            {
+                sqlcon.ConnectionString = Conexion.Cn;
+                SqlCommand sqlcmd = new SqlCommand();
+                sqlcmd.CommandText = "act_pro12";
+                sqlcmd.Connection = sqlcon;
+                sqlcmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter datatabla = new SqlDataAdapter(sqlcmd);
+                datatabla.Fill(dataresul);
+
+
+            }
+            catch (Exception ex)
+            {
+
+                dataresul = null;
+            }
+
+            return dataresul;
+
+        }
 
 
 

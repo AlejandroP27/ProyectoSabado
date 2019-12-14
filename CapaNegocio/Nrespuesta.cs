@@ -29,5 +29,16 @@ namespace CapaNegocio
         {
             return new Drespuesta().mostrar();
         }
+
+
+        public static DataTable mostrarpregunta()
+        {
+            return new Drespuesta().mostrarpregunta();
+        }
+
+        public static DataTable mostrarsincronizar()
+        {
+            return new Drespuesta().mostrarsincronizar();
+        }
     }
 }

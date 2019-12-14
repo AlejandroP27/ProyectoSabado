@@ -20,31 +20,16 @@ namespace CapaPresentacion
         string res4 = "";
         string res5 = "";
         string res6 = "";
+        public string id = "";
 
         public FrmPreguntas()
         {
             InitializeComponent();
             
-            SqlConnection Cn = new SqlConnection("Data Source=DIEGOST; Initial Catalog=EquipoMori; Integrated Security=true");
-            
-            SqlCommand command = new SqlCommand("SELECT pregunta_1,pregunta_2,pregunta_3,pregunta_4,pregunta_5,pregunta_6 FROM pregunta  WHERE id_pregunta= '2'", Cn);
-            Cn.Open();
-            SqlDataReader reader = command.ExecuteReader();
-            
-            
-            if (reader.Read())
-            {
-                label1.Text = reader["pregunta_1"].ToString();
-                label2.Text = reader["pregunta_2"].ToString();
-                label3.Text = reader["pregunta_3"].ToString();
-                label4.Text = reader["pregunta_4"].ToString();
-                label5.Text = reader["pregunta_5"].ToString();
-                label6.Text = reader["pregunta_6"].ToString();
-
-            }
-            reader.Close();
+           
 
 
+            label1.Text = id;
             
 
 

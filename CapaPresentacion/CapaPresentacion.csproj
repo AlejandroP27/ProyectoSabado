@@ -130,6 +130,12 @@
     <Compile Include="Frm_Editar_Cliente.Designer.cs">
       <DependentUpon>Frm_Editar_Cliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_editar_encuestador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_editar_encuestador.Designer.cs">
+      <DependentUpon>Frm_editar_encuestador.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Editar_Reclutamiento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +196,12 @@
     <Compile Include="Frm_Principal_Encuestador.Designer.cs">
       <DependentUpon>Frm_Principal_Encuestador.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_Principal_Preguntas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Principal_Preguntas.Designer.cs">
+      <DependentUpon>Frm_Principal_Preguntas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Principal_Reclutamiento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,6 +255,9 @@
     <EmbeddedResource Include="Frm_Editar_Cliente.resx">
       <DependentUpon>Frm_Editar_Cliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_editar_encuestador.resx">
+      <DependentUpon>Frm_editar_encuestador.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Editar_Reclutamiento.resx">
       <DependentUpon>Frm_Editar_Reclutamiento.cs</DependentUpon>
     </EmbeddedResource>
@@ -272,6 +287,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Principal_Encuestador.resx">
       <DependentUpon>Frm_Principal_Encuestador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Principal_Preguntas.resx">
+      <DependentUpon>Frm_Principal_Preguntas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Principal_Reclutamiento.resx">
       <DependentUpon>Frm_Principal_Reclutamiento.cs</DependentUpon>

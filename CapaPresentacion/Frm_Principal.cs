@@ -40,5 +40,20 @@ namespace CapaPresentacion
             Frm_Principal_Encuestador frm = new Frm_Principal_Encuestador();
             frm.ShowDialog();
         }
+
+        private void cuestionarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmPreguntas fr = new FrmPreguntas();
+
+
+
+
+            fr.ShowDialog();
+        }
+
+        private void Frm_Principal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

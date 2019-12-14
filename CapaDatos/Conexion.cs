@@ -8,6 +8,6 @@ namespace CapaDatos
 {
     class Conexion
     {
-        public static string Cn = "Data Source=DIEGOST; Initial Catalog=EquipoMori; Integrated Security=true";
+        public static string Cn = "Data Source=JORGE; Initial Catalog=EquipoMori1; Integrated Security=true";
     }
 }
