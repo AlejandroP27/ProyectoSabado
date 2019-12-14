@@ -30,15 +30,11 @@ namespace CapaPresentacion
         {
             if ((txtusuario.Text != " ") && (txtContraseña.Text!=" "))
             {
-                if ((txtusuario.Text=="Admin")&& (txtContraseña.Text=="Password"))
+                if ((txtusuario.Text=="Admin")&& (txtContraseña.Text=="123"))
                 {
                     login = new Frm_Principal();
                     login.Show();
                     this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Usuario o Contraseña incorrecta");
                 }
                 if ((txtusuario.Text == "Encuestador") && (txtContraseña.Text == "123"))
                 {
@@ -46,10 +42,7 @@ namespace CapaPresentacion
                     login2.Show();
                     this.Hide();
                 }
-                else
-                {
-                    MessageBox.Show("Usuario o Contraseña incorrecta");
-                }
+                
             }
         }
 

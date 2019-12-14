@@ -34,6 +34,8 @@
             this.mostrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.preguntasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.respuestasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,6 +47,8 @@
             this.modificarToolStripMenuItem,
             this.mostrarToolStripMenuItem,
             this.eliminarToolStripMenuItem,
+            this.preguntasToolStripMenuItem,
+            this.respuestasToolStripMenuItem,
             this.reporteToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -87,6 +91,20 @@
             this.reporteToolStripMenuItem.Text = "Salir";
             this.reporteToolStripMenuItem.Click += new System.EventHandler(this.reporteToolStripMenuItem_Click);
             // 
+            // preguntasToolStripMenuItem
+            // 
+            this.preguntasToolStripMenuItem.Name = "preguntasToolStripMenuItem";
+            this.preguntasToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
+            this.preguntasToolStripMenuItem.Text = "Preguntas";
+            this.preguntasToolStripMenuItem.Click += new System.EventHandler(this.preguntasToolStripMenuItem_Click);
+            // 
+            // respuestasToolStripMenuItem
+            // 
+            this.respuestasToolStripMenuItem.Name = "respuestasToolStripMenuItem";
+            this.respuestasToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
+            this.respuestasToolStripMenuItem.Text = "Respuestas";
+            this.respuestasToolStripMenuItem.Click += new System.EventHandler(this.respuestasToolStripMenuItem_Click);
+            // 
             // Frm_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -95,7 +113,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(848, 550);
             this.Controls.Add(this.menuStrip1);
-            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -120,5 +137,7 @@
         private System.Windows.Forms.ToolStripMenuItem mostrarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem preguntasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem respuestasToolStripMenuItem;
     }
 }

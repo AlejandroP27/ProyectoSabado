@@ -53,5 +53,16 @@ namespace CapaPresentacion
         {
             
         }
+
+        private void preguntasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_Principal_Preguntas frm = new Frm_Principal_Preguntas();
+            frm.ShowDialog();
+        }
+
+        private void respuestasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+          
+        }
     }
 }

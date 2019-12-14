@@ -190,6 +190,12 @@
     <Compile Include="Frm_Principal2.Designer.cs">
       <DependentUpon>Frm_Principal2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_PrincipalRespuestas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_PrincipalRespuestas.Designer.cs">
+      <DependentUpon>Frm_PrincipalRespuestas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Principal_Cuestionario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -296,6 +302,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Principal2.resx">
       <DependentUpon>Frm_Principal2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_PrincipalRespuestas.resx">
+      <DependentUpon>Frm_PrincipalRespuestas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Principal_Cuestionario.resx">
       <DependentUpon>Frm_Principal_Cuestionario.cs</DependentUpon>
