@@ -43,7 +43,10 @@ namespace CapaPresentacion
 
         private void reporteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Frm_Login frm = new Frm_Login();
+            this.Close();
+            frm.ShowDialog();
+            
         }
 
         private void Frm_Principal_Load(object sender, EventArgs e)

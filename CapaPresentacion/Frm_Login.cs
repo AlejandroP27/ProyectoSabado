@@ -14,6 +14,7 @@ namespace CapaPresentacion
     {
 
         Frm_Principal login;
+        Frm_Principal2 login2;
 
         public Frm_Login()
         {
@@ -22,17 +23,27 @@ namespace CapaPresentacion
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if ((txtusuario.Text != "") && (txtContraseña.Text!=""))
+            if ((txtusuario.Text != " ") && (txtContraseña.Text!=" "))
             {
                 if ((txtusuario.Text=="Admin")&& (txtContraseña.Text=="Password"))
                 {
                     login = new Frm_Principal();
                     login.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Usuario o Contraseña incorrecta");
+                }
+                if ((txtusuario.Text == "Encuestador") && (txtContraseña.Text == "123"))
+                {
+                    login2 = new Frm_Principal2();
+                    login2.Show();
                     this.Hide();
                 }
                 else
