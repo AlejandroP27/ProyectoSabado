@@ -193,6 +193,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "Frm_EditarEncuesta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_EditarEncuesta";
             this.Load += new System.EventHandler(this.Frm_EditarEncuesta_Load);
             this.ResumeLayout(false);

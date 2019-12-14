@@ -42,7 +42,7 @@ namespace CapaPresentacion
             }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void Frm_Login_Load(object sender, EventArgs e)
         {
 
         }

@@ -186,6 +186,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "Frm_CamEstado_Encuesta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_CamEstado_Encuesta";
             this.Load += new System.EventHandler(this.Frm_CamEstado_Encuesta_Load);
             this.ResumeLayout(false);

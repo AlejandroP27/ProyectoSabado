@@ -45,5 +45,10 @@ namespace CapaPresentacion
         {
             Application.Exit();
         }
+
+        private void Frm_Principal_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
