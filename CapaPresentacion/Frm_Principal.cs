@@ -41,19 +41,17 @@ namespace CapaPresentacion
             frm.ShowDialog();
         }
 
-        private void cuestionarioToolStripMenuItem_Click(object sender, EventArgs e)
+        private void reporteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmPreguntas fr = new FrmPreguntas();
-
-
-
-
-            fr.ShowDialog();
+            Frm_Login frm = new Frm_Login();
+            this.Close();
+            frm.ShowDialog();
+            
         }
 
         private void Frm_Principal_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

@@ -174,6 +174,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Name = "Frm_MostrarEncuesta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_Mostrarencuesta";
             this.Load += new System.EventHandler(this.Frm_MostrarEncuesta_Load);
             this.ResumeLayout(false);

@@ -53,11 +53,11 @@ namespace CapaNegocio
 
         }
 
-        public static string estado(int idencuesta, string estado)
+        public static string estado(int id_encue, string estado)
         {
             Dencuesta obj = new Dencuesta();
 
-            obj.Id_encuesta = idencuesta;
+            obj.Id_encuesta = id_encue;
             obj.Estado = estado;
 
             return obj.estadoencuesta(obj);

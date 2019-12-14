@@ -46,6 +46,7 @@
             // 
             // txtcliente
             // 
+            this.txtcliente.Enabled = false;
             this.txtcliente.Location = new System.Drawing.Point(164, 57);
             this.txtcliente.Name = "txtcliente";
             this.txtcliente.Size = new System.Drawing.Size(219, 20);
@@ -62,6 +63,7 @@
             // 
             // dtpFechafin
             // 
+            this.dtpFechafin.Enabled = false;
             this.dtpFechafin.Location = new System.Drawing.Point(164, 225);
             this.dtpFechafin.Name = "dtpFechafin";
             this.dtpFechafin.Size = new System.Drawing.Size(219, 20);
@@ -69,6 +71,7 @@
             // 
             // dtpFechaini
             // 
+            this.dtpFechaini.Enabled = false;
             this.dtpFechaini.Location = new System.Drawing.Point(164, 183);
             this.dtpFechaini.Name = "dtpFechaini";
             this.dtpFechaini.Size = new System.Drawing.Size(219, 20);
@@ -76,6 +79,7 @@
             // 
             // txtDescrip
             // 
+            this.txtDescrip.Enabled = false;
             this.txtDescrip.Location = new System.Drawing.Point(164, 135);
             this.txtDescrip.Name = "txtDescrip";
             this.txtDescrip.Size = new System.Drawing.Size(219, 20);
@@ -83,6 +87,7 @@
             // 
             // txtNombre
             // 
+            this.txtNombre.Enabled = false;
             this.txtNombre.Location = new System.Drawing.Point(164, 92);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(219, 20);
@@ -90,6 +95,7 @@
             // 
             // txtIdEncues
             // 
+            this.txtIdEncues.Enabled = false;
             this.txtIdEncues.Location = new System.Drawing.Point(164, 23);
             this.txtIdEncues.Name = "txtIdEncues";
             this.txtIdEncues.Size = new System.Drawing.Size(219, 20);
@@ -180,6 +186,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "Frm_CamEstado_Encuesta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_CamEstado_Encuesta";
             this.Load += new System.EventHandler(this.Frm_CamEstado_Encuesta_Load);
             this.ResumeLayout(false);
