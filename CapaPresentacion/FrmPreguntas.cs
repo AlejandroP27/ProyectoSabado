@@ -26,16 +26,6 @@ namespace CapaPresentacion
         {
             InitializeComponent();
             
-           
-
-
-            label1.Text = id;
-            
-
-
-
-
-
 
         }
 
@@ -64,14 +54,16 @@ namespace CapaPresentacion
             //    else
             //    {
 
-            rpta = Nrespuesta.insertar(Convert.ToInt32(txtid.Text),comboBox1.Text,comboBox2.Text,comboBox3.Text,comboBox4.Text,comboBox5.Text,comboBox6.Text);
+            rpta = Nrespuesta.insertar(Convert.ToInt32(txtid.Text), comboBox1.Text, comboBox2.Text, comboBox3.Text, comboBox4.Text, comboBox5.Text, comboBox6.Text, Convert.ToInt32(textBox1.Text));
 
-            if (rpta.Equals("ok"))
+            if (rpta == "ok")
             {
+                MessageBox.Show("Datos guardados");
+                this.Close();
 
-                MessageBox.Show("se añadio exitosamente!");
-                Close();
             }
+
+
         }
 
         private void radioButton12_CheckedChanged(object sender, EventArgs e)

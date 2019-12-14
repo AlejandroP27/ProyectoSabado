@@ -17,6 +17,7 @@ namespace CapaDatos
         private string _respuesta_4;
         private string _respuesta_5;
         private string _respuesta_6;
+        private int _id_pregunta;
         private DateTime _fecha_crea;
         private string _estado;
 
@@ -27,9 +28,9 @@ namespace CapaDatos
         public string Respuesta_4 { get => _respuesta_4; set => _respuesta_4 = value; }
         public string Respuesta_5 { get => _respuesta_5; set => _respuesta_5 = value; }
         public string Respuesta_6 { get => _respuesta_6; set => _respuesta_6 = value; }
+        public int Id_pregunta { get => _id_pregunta; set => _id_pregunta = value; }
         public DateTime Fecha_crea { get => _fecha_crea; set => _fecha_crea = value; }
         public string Estado { get => _estado; set => _estado = value; }
-
 
         public Drespuesta(int id_respuesta,
          string respuesta_1,
@@ -39,6 +40,7 @@ namespace CapaDatos
          string respuesta_5,
          string respuesta_6,
          DateTime fecha_crea,
+         int id_pregunta,
          string estado)
         {
 
@@ -50,6 +52,7 @@ namespace CapaDatos
             this.Respuesta_5 = respuesta_5;
             this.Respuesta_6 = respuesta_6;
             this.Fecha_crea = fecha_crea;
+            this.Id_pregunta = id_pregunta;
             this.Estado = estado;
 
 
@@ -126,7 +129,14 @@ namespace CapaDatos
                 parnivel.Value = objreclutamiento.Respuesta_6;
                 sqlcmd.Parameters.Add(parnivel);
 
- 
+                SqlParameter parnivel2 = new SqlParameter();
+                parnivel2.ParameterName = "@_id_pregunta";
+                parnivel2.SqlDbType = SqlDbType.VarChar;
+                parnivel2.Size = 50;
+                parnivel2.Value = objreclutamiento.Id_pregunta;
+                sqlcmd.Parameters.Add(parnivel2);
+
+
 
 
                 rpta = sqlcmd.ExecuteNonQuery() == 1 ? "ok" : "no se inserto nada";
@@ -215,6 +225,62 @@ namespace CapaDatos
                 sqlcon.ConnectionString = Conexion.Cn;
                 SqlCommand sqlcmd = new SqlCommand();
                 sqlcmd.CommandText = "act_pro12";
+                sqlcmd.Connection = sqlcon;
+                sqlcmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter datatabla = new SqlDataAdapter(sqlcmd);
+                datatabla.Fill(dataresul);
+
+
+            }
+            catch (Exception ex)
+            {
+
+                dataresul = null;
+            }
+
+            return dataresul;
+
+        }
+
+        public DataTable mostrarsincronizar2()
+        {
+            DataTable dataresul = new DataTable("respuesta");
+            SqlConnection sqlcon = new SqlConnection();
+
+            try
+            {
+                sqlcon.ConnectionString = Conexion.Cn;
+                SqlCommand sqlcmd = new SqlCommand();
+                sqlcmd.CommandText = "spmostrar_respuesta";
+                sqlcmd.Connection = sqlcon;
+                sqlcmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter datatabla = new SqlDataAdapter(sqlcmd);
+                datatabla.Fill(dataresul);
+
+
+            }
+            catch (Exception ex)
+            {
+
+                dataresul = null;
+            }
+
+            return dataresul;
+
+        }
+
+        public DataTable mostrarsincronizar3()
+        {
+            DataTable dataresul = new DataTable("respuesta");
+            SqlConnection sqlcon = new SqlConnection();
+
+            try
+            {
+                sqlcon.ConnectionString = Conexion.Cn;
+                SqlCommand sqlcmd = new SqlCommand();
+                sqlcmd.CommandText = "act_pro";
                 sqlcmd.Connection = sqlcon;
                 sqlcmd.CommandType = CommandType.StoredProcedure;
 

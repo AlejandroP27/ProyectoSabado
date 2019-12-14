@@ -37,6 +37,7 @@ namespace CapaPresentacion
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             FrmPreguntas frm = new FrmPreguntas();
+            frm.textBox1.Text = Convert.ToString(this.dataGridView1.CurrentRow.Cells["id_pregunta"].Value);
             frm.label1.Text = Convert.ToString(this.dataGridView1.CurrentRow.Cells["pregunta_1"].Value);
             frm.label2.Text = this.dataGridView1.CurrentRow.Cells["pregunta_2"].Value.ToString();
             frm.label3.Text = this.dataGridView1.CurrentRow.Cells["pregunta_3"].Value.ToString();
@@ -51,6 +52,24 @@ namespace CapaPresentacion
         private void button2_Click(object sender, EventArgs e)
         {
             Nrespuesta.mostrarsincronizar();
+            MessageBox.Show("¡Sincronizado Exitoso!");
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+           dataGridView1.DataSource= Nrespuesta.mostrarsincronizar2();
+            
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Nrespuesta.mostrarsincronizar3();
             MessageBox.Show("¡Sincronizado Exitoso!");
         }
     }
