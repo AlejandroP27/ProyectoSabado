@@ -148,6 +148,12 @@
     <Compile Include="Frm_Eliminar_Recluta.Designer.cs">
       <DependentUpon>Frm_Eliminar_Recluta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Login.Designer.cs">
+      <DependentUpon>Frm_Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_MostrarEncuesta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -251,6 +257,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Eliminar_Recluta.resx">
       <DependentUpon>Frm_Eliminar_Recluta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Login.resx">
+      <DependentUpon>Frm_Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Mostrarencuesta.resx">
       <DependentUpon>Frm_MostrarEncuesta.cs</DependentUpon>

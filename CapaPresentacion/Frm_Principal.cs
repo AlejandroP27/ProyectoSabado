@@ -40,5 +40,10 @@ namespace CapaPresentacion
             Frm_Principal_Encuestador frm = new Frm_Principal_Encuestador();
             frm.ShowDialog();
         }
+
+        private void reporteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
