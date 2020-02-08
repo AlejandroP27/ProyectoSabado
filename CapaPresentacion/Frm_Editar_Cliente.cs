@@ -32,7 +32,7 @@ namespace CapaPresentacion
 
                 else
                 {
-                    rpta = Ncliente.editar(Convert.ToInt32(textBox1.Text), textBox2.Text.Trim().ToUpper(), textBox3.Text.Trim().ToUpper(), textBox4.Text.Trim().ToUpper());
+                    rpta = Ncliente.editar(Convert.ToInt32(textBox1.Text),  textBox2.Text.Trim().ToUpper(), textBox3.Text.Trim().ToUpper(), textBox4.Text.Trim().ToUpper());
                 }
 
 
